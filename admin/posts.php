@@ -25,11 +25,11 @@
 			<?php else: ?>
 				<table class="table">
 						<thead>
-						<th>N</th>
+						<th>No</th>
 						<th>Author</th>
 						<th>Title</th>
 						
-						<th>Views</th>
+						<!-- <th>Views</th> -->
 						<!-- Only Admin can publish/unpublish post -->
 						
 						<th><small>Edit</small></th>
@@ -46,7 +46,7 @@
 									<?php echo $post['title']; ?>	
 								</a>
 							</td>
-							<td><?php echo $post['views']; ?></td>
+							<!-- <td><?php echo $post['views']; ?></td> -->
 							
 							<!-- Only Admin can publish/unpublish post -->
 							

@@ -11,13 +11,19 @@
 			</a>
 		</div>
 		<?php if (isset($_SESSION['user'])): ?>
+					
+
 			<div class="user-info">
+				<a href="<?php BASE_URL ?>../index.php"> Home </a>
 				<span><?php echo $_SESSION['user']['username'] ?></span> &nbsp; &nbsp; 
 				<a href="<?php echo BASE_URL . '/logout.php'; ?>" class="logout-btn">logout</a>
 			</div>
 		<?php endif ?>
 	</div>
-	
+<?php	if ( in_array($_SESSION['user']['role'], ["Admin"])) { 
+				$_SESSION['message'] = "You are now logged in";
+				
+		?>
 	<div class="container dashboard">
 		<h1>Welcome</h1>
 		<div class="stats d-flex flex-row justify-content-center">
@@ -38,6 +44,21 @@
 		</div>
 	</div>
 
+<?php	} ?>
 
+<?php	if ( in_array($_SESSION['user']['role'], ["Author"])) { 
+				$_SESSION['message'] = "You are now logged in";
+				
+		?><div class="container dashboard">
+		<h1>Welcome</h1>
+		<div class="justify-content-center">
+			
+		<div class="buttons d-flex flex-row justify-content-center">
+			<!-- <a href="users.php">Add Users</a> -->
+			<a href="posts.php">Add/Manage Posts</a>
+		</div>
+	</div>
+
+<?php	} ?>
 </body>
 </html>

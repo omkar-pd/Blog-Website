@@ -99,7 +99,6 @@ form input:focus {
   bottom: 0;
   left: 0;
   color: white;
-  /* background-color: #73707d; */
   text-align: center;
   width: 80%;
   margin: 20px auto 0px;
@@ -164,7 +163,6 @@ form input:focus {
   font-size: 15px;
   font-weight: 700;
 }
-
 .login_div input::placeholder {
   color: black;
   font-weight: 600;
@@ -172,7 +170,6 @@ form input:focus {
 }
 
 /* CONTENT */
-
 .content .post .post_image {
   height: 260px;
   width: 100%;
@@ -202,11 +199,21 @@ form input:focus {
 }
 .logged_in_info {
   text-align: right;
-  /* padding: 10px; */
 }
-
+/* POST: */
+.post {
+  padding: 2px;
+  margin-top: 5px;
+  border-top: 2px solid black;
+}
 /* SHOW POST */
 .show-post {
   padding: 10px;
-  border: 2px solid black;
+  min-height: 100vh;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.container .post a {
+  text-decoration: none;
 }

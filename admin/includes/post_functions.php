@@ -158,35 +158,7 @@ function createPost($request_values)
 				exit(0);
 			}
 		}
-	// 	global $conn, $errors, $post_id, $title, $featured_image,$body;
-
-	// 	$title = esc($request_values['title']);
-	// 	$body = esc($request_values['body']);
-	// 	$post_id = esc($request_values['post_id']);
-		
-	// 	if (empty($title)) { array_push($errors, "Post title is required"); }
-	// 	if (empty($body)) { array_push($errors, "Post body is required"); }
-	// 	// if new featured image has been provided
-	// 	if (isset($_POST['featured_image'])) {
-	// 		// Get image name
-	// 	  	$featured_image = $_FILES['featured_image']['name'];
-	// 	  	// image file directory
-	// 	  	$target = "../static/images/" . basename($featured_image);
-	// 	  	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
-	// 	  		array_push($errors, "Failed to upload image. Please check file settings for your server");
-	// 	  	}
-             
-	// 	}
-
-		
-	// 	if (count($errors) == 0) {
-	// 		 $query = "UPDATE posts SET title='$title', views=0, image='$featured_image', content='$body', updated_at=now() WHERE id=$post_id";
-           
-			
-	// 		$_SESSION['message'] = "Post updated successfully";
-	// 		header('location: posts.php');
-	// 		exit(0);
-	// 	}
+	
 	}
 	// delete blog post
 	function deletePost($post_id)

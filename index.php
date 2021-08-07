@@ -16,26 +16,24 @@
 		<!-- Page content -->
 		<h2 class="content-title">Recent Articles</h2>
 			<hr>
-		<div class="content row  ">
+		<div class="content row flex-row  mt-2">
 			
-<!-- more content still to come here ... -->
 
-<!-- Add this ... -->
 <?php foreach ($posts as $post): ?>
 	
-	<div class=" post col-lg-6" style="margin-left: 0px;">
+	<div class=" post col-lg-6 pt-2" >
 		<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="Image">
 		
 			<div class="post_info">
-				
-                 <a href="show_post.php?title=<?php echo $post['title']; ?>">  <h1> <?php echo $post['title']; ?></h1></a>
+				  <a href="show_post.php?title=<?php echo $post['title']; ?>">  <h1> <?php echo $post['title']; ?></h1></a>
+				  <div class="d-flex justify-content-between m-1">
 					<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
 					<a href="show_post.php?title=<?php echo $post['title']; ?>"> <span class="read_more">Read more...</span> </a>
-                    
+                    </div>
 				</div>
 			</div>
 			
-		<? echo $post['content']; ?>
+		
 <?php endforeach ?>
 	</div>
 

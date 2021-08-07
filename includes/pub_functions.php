@@ -1,14 +1,14 @@
 <?php 
-/* * * * * * * * * * * * * * *
-* Returns all published posts
-* * * * * * * * * * * * * * */
+
+//  Returns all published posts
+
 function getPublishedPosts() {
 	// use global $conn object in function
 	global $conn;
 	$sql = "SELECT * FROM posts";
 	$result = mysqli_query($conn, $sql);
 
-	// fetch all posts as an associative array called $posts
+	// fetch all posts 
 	$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 	return $posts;

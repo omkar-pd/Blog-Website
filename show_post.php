@@ -18,9 +18,11 @@
 ?>
 	<title>BlogSpot|  </title>
 </head>
+<body class="bg-dark">
+	
 <?php require_once('includes/navbar.php') ?>
 <?php foreach ($posts as $post): ?>
-	<div class="show-post container-fluid w-50 ml-auto mr-auto mt-3" style="margin-left: 0px;">
+	<div class="show-post container-fluid w-50 ml-auto mr-auto mt-5 bg-light " >
 			<?php $u_id=$post['user_id'];
 		$name=getName($u_id); ?>
 	 <?php
@@ -36,3 +38,4 @@
 		 
 	</div>
 <?php endforeach ?>
+</body>
