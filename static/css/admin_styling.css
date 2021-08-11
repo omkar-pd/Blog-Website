@@ -187,7 +187,7 @@ th {
   background: #f9f9f9;
   transition: 0.1s;
 }
-/* Actions div (at the middle) */
+/* Actions div*/
 .container.content .action {
   width: 35%;
   float: left;
@@ -202,6 +202,7 @@ th {
 .container.content .action.create-post-div {
   width: 80%;
 }
+
 /* Table div (Displaying records from DB) */
 .table-div {
   float: left;

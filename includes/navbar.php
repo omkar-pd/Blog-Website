@@ -11,7 +11,7 @@
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Recent Articles <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="recent_articles.php">Recent Articles <span class="sr-only">(current)</span></a>
       </li>
        <?php if (isset($_SESSION['user']['username'])) { ?>
       <?php	if ( in_array($_SESSION['user']['role'], ["Admin","Author"])) {  ?> 

@@ -52,6 +52,7 @@ form input {
   background: transparent;
   border: 1px solid #3e606f;
 }
+
 form input:focus {
   outline: none;
 }
@@ -77,18 +78,8 @@ form input:focus {
 .navbar {
   height: 50% !important;
 }
-/* LOGO */
-.navbar .logo_div {
-  float: left;
-  padding-top: 5px;
-  padding-left: 40px;
-}
-.navbar .logo_div h1 {
-  color: #b9e6f2;
-  font-size: 3em;
-  letter-spacing: 5px;
-  font-weight: 100;
-  font-family: "Tangerine", cursive;
+.navbar .collapse .navbar-nav .nav-link:hover {
+  color: red;
 }
 
 /* FOOTER */
@@ -104,69 +95,18 @@ form input:focus {
   margin: 20px auto 0px;
   padding: 20px 0px;
 }
-/* BANNER: Welcome message; */
+/* BANNER */
 .banner {
   margin: 5px auto;
-  min-height: 400px;
-  color: white;
   background-image: url(../images/bannerNew.jpg);
   border-radius: 5px;
   background-size: 100% 100%;
 }
-.banner .welcome_msg {
-  width: 45%;
-  float: left;
-  padding: 20px;
+.banner .login-div .login-form input {
+  background: red;
 }
-.banner .welcome_msg h1 {
-  color: #b9e6f2;
-  margin: 25px 0px;
-  font-size: 2.4em;
-  font-family: "Averia Serif Libre", cursive;
-}
-.banner .welcome_msg p {
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.8em;
-  font-family: "Noto Serif", serif;
-}
-.banner .welcome_msg p span {
-  font-size: 0.81em;
-  color: #3e606f;
-}
-
-/* BANNER: Login Form; */
-.banner .login_div {
-  width: 50%;
-  float: left;
-}
-.banner .login_div form {
-  margin-top: 40px;
-}
-.banner .login_div form h2 {
-  /* color: black; */
-  margin-bottom: 20px;
-  font-family: "Noto Serif", serif;
-}
-.banner .login_div form input {
-  width: 60%;
-  color: black;
-  border: 2px solid black;
-  margin: 10px auto;
-  letter-spacing: 1.3px;
-  font-family: "Noto Serif", serif;
-}
-.banner .login_div form button {
-  display: block;
-  margin-left: 20%;
-  width: 150px;
-  font-size: 15px;
-  font-weight: 700;
-}
-.login_div input::placeholder {
-  color: black;
-  font-weight: 600;
-  font-size: 16px;
+.banner .a:hover {
+  color: blue !important;
 }
 
 /* CONTENT */
@@ -208,12 +148,18 @@ form input:focus {
 }
 /* SHOW POST */
 .show-post {
+  width: 80% !important;
   padding: 10px;
   min-height: 100vh;
   border: 2px solid white;
   border-radius: 5px;
 }
 
+.show-post img {
+  width: 60%;
+}
 .container .post a {
   text-decoration: none;
 }
+
+/* MEDIA QURIES */

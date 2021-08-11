@@ -5,21 +5,19 @@
 
 <!-- Get all admin posts from DB -->
 <?php $posts = getAllPosts(); ?>
-	<title>Admin | Manage Posts</title>
+	<title>Manage Posts</title>
 </head>
 <body>
 	<!-- admin navbar -->
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
-
+	
 	<div class="container content">
 		<!-- Left side menu -->
 		<?php include(ROOT_PATH . '/admin/includes/menu.php') ?>
-
 		<!-- Display records from DB-->
 		<div class="table-div"  style="width: 80%;">
 			<!-- Display notification message -->
 			<?php include(ROOT_PATH . '/admin/includes/messages.php') ?>
-
 			<?php if (empty($posts)): ?>
 				<h1 style="text-align: center; margin-top: 20px;">No posts in the database.</h1>
 			<?php else: ?>
@@ -27,11 +25,7 @@
 						<thead>
 						<th>No</th>
 						<th>Author</th>
-						<th>Title</th>
-						
-						<!-- <th>Views</th> -->
-						<!-- Only Admin can publish/unpublish post -->
-						
+						<th>Title</th>	
 						<th><small>Edit</small></th>
 						<th><small>Delete</small></th>
 					</thead>
@@ -46,12 +40,7 @@
 									<?php echo $post['title']; ?>	
 								</a>
 							</td>
-							<!-- <td><?php echo $post['views']; ?></td> -->
-							
-							<!-- Only Admin can publish/unpublish post -->
-							
-
-							<td>
+								<td>
 								<a class="fa fa-pencil btn edit"
 									href="create_post.php?edit-post=<?php echo $post['id'] ?>">
 								</a>
@@ -67,7 +56,6 @@
 				</table>
 			<?php endif ?>
 		</div>
-		<!-- // Display records from DB -->
 	</div>
 </body>
 </html>

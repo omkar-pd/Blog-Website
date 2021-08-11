@@ -3,7 +3,7 @@
 <?php 
 	// Get all admin users from DB
 	$admins = getAdminUsers();
-	$roles = ['Admin', 'Author'];				
+	$roles = ['Admin', 'Author','NULL'];				
 ?>
 <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
 	<title>Admin | Manage users</title>
@@ -11,15 +11,13 @@
 <body>
 	<!-- admin navbar -->
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
-	<div class="container content">
+	<div class="container content row justify-content-center align-items-center">
 		<!-- Left side menu -->
 		<?php include(ROOT_PATH . '/admin/includes/menu.php') ?>
 		<!-- Middle form - to create and edit  -->
 		<div class="action">
 			<h1 class="page-title">Create/Edit Admin User</h1>
-
 			<form method="post" action="<?php echo BASE_URL . 'admin/users.php'; ?>" >
-
 				<!-- validation errors for the form -->
 				<?php include(ROOT_PATH . '/includes/errors.php') ?>
 
@@ -47,19 +45,17 @@
 				<?php endif ?>
 			</form>
 		</div>
-		<!-- // Middle form - to create and edit -->
-
+	
 		<!-- Display records from DB-->
 		<div class="table-div">
 			<!-- Display notification message -->
 			<?php include(ROOT_PATH . '/admin/includes/messages.php') ?>
-
 			<?php if (empty($admins)): ?>
 				<h1>No admins in the database.</h1>
 			<?php else: ?>
 				<table class="table">
 					<thead>
-						<th>N</th>
+						<th>No</th>
 						<th>Admin</th>
 						<th>Role</th>
 						<th colspan="2">Action</th>
@@ -80,7 +76,7 @@
 							</td>
 							<td>
 								<a class="fa fa-trash btn delete" 
-								    href="users.php?delete-admin=<?php echo $admin['id'] ?>">
+									 href="users.php?delete-admin=<?php echo $admin['id'] ?>">
 								</a>
 							</td>
 						</tr>

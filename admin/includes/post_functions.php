@@ -4,14 +4,12 @@ $post_id = 0;
 $isEditingPost = false;
 $published = 0;
 $title = "";
-$post_slug = "";
 $body = "";
 $featured_image = "";
-$post_topic = "";
 
-/* - - - - - - - - - - 
--  Post functions
-- - - - - - - - - - -*/
+
+// -  Post functions
+
 // get all posts from DB
 function getAllPosts()
 {
@@ -48,9 +46,9 @@ function getPostAuthorById($user_id)
 		return null;
 	}
 }
-/* - - - - - - - - - - 
--  Post actions
-- - - - - - - - - - -*/
+
+// -  Post actions
+
 // if user clicks the create post button
 if (isset($_POST['create_post'])) { createPost($_POST); }
 // if user clicks the Edit post button
@@ -73,13 +71,13 @@ if (isset($_GET['delete-post'])) {
 function createPost($request_values)
 	{
 		global $conn, $errors, $title, $featured_image, $topic_id, $body, $published;
+				$user_id = $_SESSION['user']['id'];
+
 		$title = esc($request_values['title']);
 		$body = htmlentities(esc($request_values['body']));
 		if (isset($request_values['topic_id'])) {
 			$topic_id = esc($request_values['topic_id']);
 		}
-		
-		
 		// validate form
 		if (empty($title)) { array_push($errors, "Post title is required"); }
 		if (empty($body)) { array_push($errors, "Post body is required"); }
@@ -92,24 +90,18 @@ function createPost($request_values)
 	  	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
 	  		array_push($errors, "Failed to upload image. Please check file settings for your server");
 	  	}
-	
 		// create post if there are no errors in the form
 		if (count($errors) == 0) {
-			$query = "INSERT INTO posts (user_id, title, image, content,created_at, updated_at) VALUES(1, '$title', '$featured_image', '$body', now(), now())";
+			$query = "INSERT INTO posts (user_id, title, image, content,created_at, updated_at) VALUES('$user_id', '$title', '$featured_image', '$body', now(), now())";
 			if(mysqli_query($conn, $query)){ // if post created successfully
 				$inserted_post_id = mysqli_insert_id($conn);
-				
 				$_SESSION['message'] = "Post created successfully";
 				header('location: posts.php');
 				exit(0);
 			}
 		}
 	}
-
-	
-
 	//  sets post fields on form for editing
-	
 	function editPost($role_id)
 	{
 		global $conn, $title, $post_slug, $body, $published, $isEditingPost, $post_id;
@@ -119,21 +111,16 @@ function createPost($request_values)
 		// set form values on the form to be updated
 		$title = $post['title'];
 		$body = $post['content'];
-		
 	}
-
 	function updatePost($request_values)
 	{
         global $conn, $errors, $title, $featured_image, $topic_id, $body, $published;
 		$title = esc($request_values['title']);
 		$body = htmlentities(esc($request_values['body']));
 		$post_id = esc($request_values['post_id']);
-		
-		
 		// validate form
 		if (empty($title)) { array_push($errors, "Post title is required"); }
 		if (empty($body)) { array_push($errors, "Post body is required"); }
-		
 		// Get image name
 	  	$featured_image = $_FILES['featured_image']['name'];
 	  	if (empty($featured_image)) { array_push($errors, "Featured image is required"); }
@@ -142,23 +129,17 @@ function createPost($request_values)
 	  	if (!move_uploaded_file($_FILES['featured_image']['tmp_name'], $target)) {
 	  		array_push($errors, "Failed to upload image. Please check file settings for your server");
 	  	}
-		// Ensure that no post is saved twice. 
-		
-
-		
 		// create post if there are no errors in the form
 		if (count($errors) == 0) {
 			$query = "UPDATE posts SET title='$title', views=0, image='$featured_image', content='$body', updated_at=now() WHERE id='$post_id' ";
             // $query = "UPDATE posts SET title='$title', views=0, image='$featured_image', content='$body', updated_at=now() WHERE id=$post_id";
 			if(mysqli_query($conn, $query)){ // if post created successfully
 				$inserted_post_id = mysqli_insert_id($conn);
-				
 				$_SESSION['message'] = "Post Updated successfully";
 				header('location: posts.php');
 				exit(0);
 			}
 		}
-	
 	}
 	// delete blog post
 	function deletePost($post_id)

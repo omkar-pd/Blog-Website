@@ -11,8 +11,6 @@
 			</a>
 		</div>
 		<?php if (isset($_SESSION['user'])): ?>
-					
-
 			<div class="user-info">
 				<a href="<?php BASE_URL ?>../index.php"> Home </a>
 				<span><?php echo $_SESSION['user']['username'] ?></span> &nbsp; &nbsp; 
@@ -20,9 +18,9 @@
 			</div>
 		<?php endif ?>
 	</div>
+	<!-- if user is Admin -->
 <?php	if ( in_array($_SESSION['user']['role'], ["Admin"])) { 
 				$_SESSION['message'] = "You are now logged in";
-				
 		?>
 	<div class="container dashboard">
 		<h1>Welcome</h1>
@@ -32,10 +30,8 @@
 				<span>Users</span>
 			</a>
 			<a href="posts.php">
-				
-				<span>Posts</span>
+			<span>Posts</span>
 			</a>
-		
 		</div>
 		<br><br><br>
 		<div class="buttons d-flex flex-row justify-content-center">
@@ -43,22 +39,18 @@
 			<a href="posts.php">Add Posts</a>
 		</div>
 	</div>
-
 <?php	} ?>
-
+<!-- If users role is author user wont see admin functions -->
 <?php	if ( in_array($_SESSION['user']['role'], ["Author"])) { 
 				$_SESSION['message'] = "You are now logged in";
-				
-		?><div class="container dashboard">
+				?>
+		<div class="container dashboard">
 		<h1>Welcome</h1>
 		<div class="justify-content-center">
-			
 		<div class="buttons d-flex flex-row justify-content-center">
-			<!-- <a href="users.php">Add Users</a> -->
 			<a href="posts.php">Add/Manage Posts</a>
 		</div>
 	</div>
-
 <?php	} ?>
 </body>
 </html>

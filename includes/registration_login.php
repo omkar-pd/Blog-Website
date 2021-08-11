@@ -41,7 +41,7 @@
 					  VALUES('$username', '$email', '$password', now(), now())";
 			mysqli_query($conn, $query);
 
-			// get id of created user
+			// id of created user
 			$reg_user_id = mysqli_insert_id($conn); 
 
 			// put logged in user into session array
@@ -116,10 +116,8 @@
 		$sql = "SELECT * FROM users WHERE id=$id LIMIT 1";
 
 		$result = mysqli_query($conn, $sql);
+		// returns user in an array 
 		$user = mysqli_fetch_assoc($result);
-
-		// returns user in an array format: 
-		// ['id'=>1 'username' => 'Awa', 'email'=>'a@a.com', 'password'=> 'mypass']
 		return $user; 
 	}
 ?>

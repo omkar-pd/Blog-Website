@@ -1,20 +1,20 @@
 <?php require_once('config.php') ?>
 <?php require_once( ROOT_PATH . '/includes/registration_login.php') ?>
+<?php require_once(ROOT_PATH . '/includes/pub_functions.php') ?>
 <?php require_once('includes/head_section.php') ?>
-<?php require_once( ROOT_PATH . '/includes/pub_functions.php') ?>
 
-<!-- Retrieve all posts from database  -->
-<?php $posts = getPublishedPosts(); ?>
-	<title>BlogSpot | Home </title>
+<?php $posts = getRecentPosts(); ?>
+
+	<title>BlogSpot | Recent Articles </title>
 </head>
 <body>
-	<!-- container - wraps whole page -->
-	<div class="container">
+
+<div class="container">
 		<!-- navbar -->
 		<?php include('includes/navbar.php') ?>
         <?php include('includes/banner.php') ?>
 		<!-- Page content -->
-		<h2 class="content-title">Articles</h2>
+		<h2 class="content-title">Recent Articles</h2>
 			<hr>
 		<div class="content row flex-row  mt-2">
 			
