@@ -3,7 +3,16 @@
  
 HOMEPAGE:
 
-![BlogSpot   Home](https://user-images.githubusercontent.com/81369580/128605031-a0efb857-06a9-47e0-abb7-47414961ba87.png)
+![BlogSpot   Home](https://user-images.githubusercontent.com/81369580/129002353-eba3ce95-bb62-45c7-b072-16f0bef478a2.png)
+
+
+Article:
+
+![BlogSpot   Secrets to Living a Happier Life](https://user-images.githubusercontent.com/81369580/129002522-7840f352-8d55-4d2e-a71c-c0d67a9ccd1e.png)
+
+Recent Articles:
+
+![BlogSpot   Recent Articles](https://user-images.githubusercontent.com/81369580/129002766-767524bb-45b2-48e7-887f-bad559dad6a3.png)
 
 
 SIGN UP PAGE: 
@@ -16,17 +25,20 @@ AUTHOR Dashboard:
 ![Author  Dashboard ](https://user-images.githubusercontent.com/81369580/128605046-34ac7fcf-a4c9-41a2-8311-8d463626b149.png)
 
 
-AUTHOR Manage Posts:
+AUTHOR updating Posts:
 
-![Admin   Manage Posts](https://user-images.githubusercontent.com/81369580/128605056-848e225c-2fde-4218-8c54-f5d0b4b5c0cf.png)
-
+![Author updating post](https://user-images.githubusercontent.com/81369580/129002452-3be59932-1637-44a1-8006-3eeaff3c39eb.png)
 
 ADMIN Dashboard:
 
-![Admin   Dashboard](https://user-images.githubusercontent.com/81369580/128605064-ae7c9172-bdfd-4c5f-afee-d0778d295cb8.png)
+![Admin   Dashboard](https://user-images.githubusercontent.com/81369580/129002671-a4d6ee2d-a69f-4392-8960-57a8f4532b2c.png)
 
 
 ADMIN Manage Users:
 
-![Admin   Manage users](https://user-images.githubusercontent.com/81369580/128605068-58a9b4cb-7e15-497f-a72d-fc6a9719c33e.png)
+![Admin   Manage Posts](https://user-images.githubusercontent.com/81369580/129002613-9f84fc1d-4dfb-455f-8f2d-328883926ff0.png)
+
+
+
+
 
