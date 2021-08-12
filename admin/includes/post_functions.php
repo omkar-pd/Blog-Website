@@ -132,8 +132,7 @@ function createPost($request_values)
 		// create post if there are no errors in the form
 		if (count($errors) == 0) {
 			$query = "UPDATE posts SET title='$title', views=0, image='$featured_image', content='$body', updated_at=now() WHERE id='$post_id' ";
-            // $query = "UPDATE posts SET title='$title', views=0, image='$featured_image', content='$body', updated_at=now() WHERE id=$post_id";
-			if(mysqli_query($conn, $query)){ // if post created successfully
+            			if(mysqli_query($conn, $query)){ // if post created successfully
 				$inserted_post_id = mysqli_insert_id($conn);
 				$_SESSION['message'] = "Post Updated successfully";
 				header('location: posts.php');
