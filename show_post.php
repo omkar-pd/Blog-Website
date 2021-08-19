@@ -35,4 +35,5 @@
 			</div>
 	</div>
 <?php endforeach ?>
+<?php include( ROOT_PATH . '/includes/footer.php'); ?>
 </body>
