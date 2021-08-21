@@ -66,21 +66,17 @@
 	if (isset($_POST['login_btn'])) {
 		$username = esc($_POST['username']);
 		$password = esc($_POST['password']);
-
 		if (empty($username)) { array_push($errors, "Username required"); }
 		if (empty($password)) { array_push($errors, "Password required"); }
 		if (empty($errors)) {
 			$password = md5($password); // encrypt password
 			$sql = "SELECT * FROM users WHERE username='$username' and password='$password' LIMIT 1";
-
 			$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result) > 0) {
 				// get id of created user
 				$reg_user_id = mysqli_fetch_assoc($result)['id']; 
-
 				// put logged in user into session array
 				$_SESSION['user'] = getUserById($reg_user_id); 
-
 				// if user is admin, redirect to admin area
 				if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
 					$_SESSION['message'] = "You are now logged in";
@@ -98,15 +94,51 @@
 			}
 		}
 	}
+
+// Forgot password
+if (isset($_POST['forgot_pass'])) {
+global $conn;
+$username_new=esc($_POST['username']);
+$email=esc($_POST['email']);
+$sql = "SELECT * FROM users WHERE username='$username_new' 
+								AND email='$email' LIMIT 1";
+		$result = mysqli_query($conn, $sql);
+		$user = mysqli_fetch_assoc($result);
+		if ($user) { // if user exists
+			if ($user['username'] === $username_new && $user['email']===$email) {
+			return $s= "true";
+			}			
+}else {
+				return $s= "false";
+			}
+}
+
+// New Password
+if(isset($_POST['change_pass'])){
+	global $conn;
+	$username_new=esc($_POST['username']);
+	$email=esc($_POST['email']);
+	$password_1=$_POST['new_pass'];
+	$password_2=$_POST['confirm_pass'];
+	if($password_1===$password_2){
+		$password = md5($password_1);//encrypt the password
+			$query = "UPDATE users SET password='$password', updated_at=now() WHERE username='$username_new' AND email='$email'";
+			$result=mysqli_query($conn, $query);
+			if ($result) { 
+				echo '<script type="text/JavaScript"> alert("Given username and email does not exists in our system");</script>';
+				header('location: login.php');
+			}
+	}else {
+		array_push($errors,"Passwords do not match");
+	}
+}
 	// escape value from form
 	function esc(String $value)
 	{	
 		// bring the global db connect object into function
 		global $conn;
-
 		$val = trim($value); // remove empty space sorrounding string
 		$val = mysqli_real_escape_string($conn, $value);
-
 		return $val;
 	}
 	// Get user info from user id
@@ -114,7 +146,6 @@
 	{
 		global $conn;
 		$sql = "SELECT * FROM users WHERE id=$id LIMIT 1";
-
 		$result = mysqli_query($conn, $sql);
 		// returns user in an array 
 		$user = mysqli_fetch_assoc($result);
