@@ -1,5 +1,5 @@
 <?php  include('config.php'); ?>
-<?php  include('includes/registration_login.php'); ?>
+<?php  require_once('includes/registration_login.php'); ?>
 <?php require_once( ROOT_PATH . '/includes/pub_functions.php') ?>
 <?php  include('includes/head_section.php'); ?>
 <title>BlogSpot | Forgot Password </title>
@@ -15,17 +15,30 @@
             <button class="btn btn-primary" name="forgot_pass">Submit</button>
             <?php if(!empty($s)){
                 if($s==="true"){ ?>
-                <form action="forgot_password.php" method="POST" >
-                <input  class="pass_field w-50" name="new_pass" type="password" placeholder="Enter New Password" required>
-                <input  class="pass_field w-50" name="confirm_pass" type="password" placeholder="Confirm New Password" required>
-                <button name="change_pass" class="btn btn-info" >Submit</button>
-                
- </form>
-</form>
+                 <form action="forgot_password.php" method="post">
+                 <input type="text" class="w-50" name="code" placeholder="Enter the code">
+                 <input type="hidden" class="w-50" name="real_code" id="" value="<?php if(!empty($code)){ echo $code;}?>" >
+                 <button class="btn btn-primary" name="verify">Verify</button>
+              </form>
+               
+
                <?php }else {
                 echo '<script type="text/JavaScript">  alert("Given username and email does not exists in our system");
      </script>';
                }
                 }?>
+                <?php  if(isset($v)){
+                if($v=="true") {?>
+                 <form action="forgot_password.php" method="POST" >
+                <input  class="pass_field w-50" name="new_pass" type="password" placeholder="Enter New Password" required>
+                <input  class="pass_field w-50" name="confirm_pass" type="password" placeholder="Confirm New Password" required>
+                <button name="change_pass" class="btn btn-info" >Submit</button>
+                
+ </form>
+ </form>
+                <?php }else { 
+                     echo '<script type="text/JavaScript">  alert("Given username and email does not exists in our system");
+     </script>';
+                }}?>
     </div>
 	<?php include( ROOT_PATH . '/includes/footer.php'); ?>

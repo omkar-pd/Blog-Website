@@ -1,4 +1,5 @@
 <?php 
+
 	// variable declaration
 	$username = "";
 	$email    = "";
@@ -106,12 +107,54 @@ $sql = "SELECT * FROM users WHERE username='$username_new'
 		$user = mysqli_fetch_assoc($result);
 		if ($user) { // if user exists
 			if ($user['username'] === $username_new && $user['email']===$email) {
-			return $s= "true";
-			}			
-}else {
-				return $s= "false";
-			}
+			// PHP MAILER TO SEND EMAIL
+			require("./PHPMailer-master/src/PHPMailer.php");
+			require("./PHPMailer-master/src/SMTP.php");
+
+		$vcode="";
+		$real_code="";
+   		$subject="Blog Website Email Verification";
+   		$code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 6);
+   		$body = "Your Verification Code is : " . $code;
+   
+   		 $mail = new PHPMailer\PHPMailer\PHPMailer();
+   		 $mail->IsSMTP(); // enable SMTP
+   		 $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+   		 $mail->SMTPAuth = true; // authentication enabled
+   		 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+    	 $mail->Host = "smtp.gmail.com";
+   		 $mail->Port = 465; // or 587
+    	 $mail->IsHTML(true);
+    	 $mail->Username = "xxxxxx@gmail.com";
+    	 $mail->Password = "xxxxxxxx";
+    	 $mail->Subject = $subject;
+    	 $mail->Body = $body;
+    	 $mail->AddAddress($email);
+
+     if(!$mail->Send()) {
+       echo '<script type="text/JavaScript">  alert("Email Failed") . ;
+     </script>'; 
+     } else {
+echo '<script type="text/JavaScript">  alert("Email sent successfully") . ;
+     </script>';     }
+   }
+return $s= "true";	}else {
+			return $s= "false";
+	}	
 }
+
+// TO VERIFY CODE
+	if(isset($_POST['verify'])){
+		$username_new=esc($_POST['username']);
+	$email=esc($_POST['email']);
+        $vcode = $_POST['code'];
+         $real_code = $_POST['real_code'];
+		 if($real_code===$vcode) { 
+			 return $v="true";
+		 }else {
+			 return $v="false";
+		 }
+   }			
 
 // New Password
 if(isset($_POST['change_pass'])){
@@ -131,7 +174,8 @@ if(isset($_POST['change_pass'])){
 	}else {
 		array_push($errors,"Passwords do not match");
 	}
-}
+} 
+
 	// escape value from form
 	function esc(String $value)
 	{	
@@ -152,3 +196,4 @@ if(isset($_POST['change_pass'])){
 		return $user; 
 	}
 ?>
+

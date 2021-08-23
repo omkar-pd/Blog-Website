@@ -76,7 +76,8 @@ form input:focus {
 }
 /* NAVBAR */
 .navbar {
-  height: 50% !important;
+  height: auto !important;
+  /* height: 50% !important; */
 }
 .navbar .collapse .navbar-nav .nav-link:hover {
   color: red;
