@@ -114,7 +114,6 @@ $sql = "SELECT * FROM users WHERE username='$username_new'
    		$subject="Blog Website Email Verification";
    		$code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 6);
    		$body = "Your Verification Code is : " . $code;
-		// setcookie('code',$code);
 		$_SESSION['code']=$code;
    		 $mail = new PHPMailer\PHPMailer\PHPMailer();
    		 $mail->IsSMTP(); // enable SMTP
@@ -124,7 +123,7 @@ $sql = "SELECT * FROM users WHERE username='$username_new'
     	 $mail->Host = "smtp.gmail.com";
    		 $mail->Port = 465; // or 587
     	 $mail->IsHTML(true);
-    	 $mail->Username = "XXXXX@gmail.com";
+    	 $mail->Username = "XXXXXX@gmail.com";
     	 $mail->Password = "XXXXXXXX";
     	 $mail->Subject = $subject;
     	 $mail->Body = $body;

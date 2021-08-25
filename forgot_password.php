@@ -29,8 +29,15 @@
                 <?php  if(isset($v)){
                 if($v=="true") {?>
                  <form action="forgot_password.php" method="POST" >
+                   <div class="input-group">
                 <input  class="pass_field w-50" name="new_pass" type="password" placeholder="Enter New Password" required>
+                <img class="show_pass" src="./static/images/eye-fill.svg" alt="eye" style="position: absolute;right: 191px;top: 21px;">
+                   </div>
+                
+                <div class="input-group">
                 <input  class="pass_field w-50" name="confirm_pass" type="password" placeholder="Confirm New Password" required>
+                <img class="show_pass" src="./static/images/eye-fill.svg" alt="eye" style="position: absolute;right: 191px;top: 21px;">
+                   </div>
                 <button name="change_pass" class="btn btn-info" >Submit</button>
                 
  </form>
