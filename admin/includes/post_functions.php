@@ -7,7 +7,6 @@ $title = "";
 $body = "";
 $featured_image = "";
 
-
 // -  Post functions
 
 // get all posts from DB
@@ -75,9 +74,7 @@ function createPost($request_values)
 
 		$title = esc($request_values['title']);
 		$body = htmlentities(esc($request_values['body']));
-		if (isset($request_values['topic_id'])) {
-			$topic_id = esc($request_values['topic_id']);
-		}
+		
 		// validate form
 		if (empty($title)) { array_push($errors, "Post title is required"); }
 		if (empty($body)) { array_push($errors, "Post body is required"); }

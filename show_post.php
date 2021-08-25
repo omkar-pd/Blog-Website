@@ -1,13 +1,7 @@
 <?php require_once('config.php') ?>
 <?php require_once( ROOT_PATH . '/includes/pub_functions.php') ?>
 
-<?php 
-	if (isset($_GET['title'])) {
-		$posts = getPost($_GET['title']);
-	}
-?>
 <?php require_once('includes/head_section.php') ?>
-
  <?php 
 	if (isset($_GET['id'])) {
 		$post = getPost($_GET['id']);
