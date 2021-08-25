@@ -16,16 +16,15 @@
             <?php if(!empty($s)){
                 if($s==="true"){ ?>
                  <form action="forgot_password.php" method="post">
+                
                  <input type="text" class="w-50" name="code" placeholder="Enter the code">
-                 <input type="hidden" class="w-50" name="real_code" id="" value="<?php if(!empty($code)){ echo $code;}?>" >
                  <button class="btn btn-primary" name="verify">Verify</button>
               </form>
                
 
-               <?php }else {
-                echo '<script type="text/JavaScript">  alert("Given username and email does not exists in our system");
-     </script>';
-               }
+               <?php }else {?>
+                <p>This username and email does not exists in our system</p>
+              <?php }
                 }?>
                 <?php  if(isset($v)){
                 if($v=="true") {?>
@@ -36,9 +35,11 @@
                 
  </form>
  </form>
-                <?php }else { 
-                     echo '<script type="text/JavaScript">  alert("Given username and email does not exists in our system");
-     </script>';
-                }}?>
+                <?php }else { ?>
+                  <p>Incorrect Code, Please try again with correct code</p>  
+                  <input type="text" class="w-50" name="code" placeholder="Enter the code">
+                <button class="btn btn-primary" name="verify">Verify</button>
+
+             <?php   }}?>
     </div>
 	<?php include( ROOT_PATH . '/includes/footer.php'); ?>

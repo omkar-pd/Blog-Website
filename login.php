@@ -15,7 +15,7 @@
 			<input type="text" name="username" value="<?php echo $username; ?>" value="" placeholder="Username" style="width:88%;">
 			<div class="pass_field_div">
 			<input class="pass_field" type="password" name="password" placeholder="Password" style="width:88%;">
-			<img src="../blog/static/images/eye-fill.svg" class="show_pass" alt="Eye">
+			<img src="./static/images/eye-fill.svg" class="show_pass" alt="Eye">
 			</div>
 			<button type="submit" class="btn btn-primary w-100" name="login_btn">Login</button>
 			<p>

@@ -1,10 +1,11 @@
 <?php 
-
+// PHP MAILER TO SEND EMAIL
+			require("./PHPMailer-master/src/PHPMailer.php");
+			require("./PHPMailer-master/src/SMTP.php");
 	// variable declaration
 	$username = "";
 	$email    = "";
-	$errors = array(); 
-
+	$errors = array();
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form
@@ -99,6 +100,7 @@
 // Forgot password
 if (isset($_POST['forgot_pass'])) {
 global $conn;
+global $newCode;
 $username_new=esc($_POST['username']);
 $email=esc($_POST['email']);
 $sql = "SELECT * FROM users WHERE username='$username_new' 
@@ -107,16 +109,13 @@ $sql = "SELECT * FROM users WHERE username='$username_new'
 		$user = mysqli_fetch_assoc($result);
 		if ($user) { // if user exists
 			if ($user['username'] === $username_new && $user['email']===$email) {
-			// PHP MAILER TO SEND EMAIL
-			require("./PHPMailer-master/src/PHPMailer.php");
-			require("./PHPMailer-master/src/SMTP.php");
-
 		$vcode="";
 		$real_code="";
    		$subject="Blog Website Email Verification";
    		$code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 6);
    		$body = "Your Verification Code is : " . $code;
-   
+		// setcookie('code',$code);
+		$_SESSION['code']=$code;
    		 $mail = new PHPMailer\PHPMailer\PHPMailer();
    		 $mail->IsSMTP(); // enable SMTP
    		 $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
@@ -125,8 +124,8 @@ $sql = "SELECT * FROM users WHERE username='$username_new'
     	 $mail->Host = "smtp.gmail.com";
    		 $mail->Port = 465; // or 587
     	 $mail->IsHTML(true);
-    	 $mail->Username = "xxxxxx@gmail.com";
-    	 $mail->Password = "xxxxxxxx";
+    	 $mail->Username = "XXXXX@gmail.com";
+    	 $mail->Password = "XXXXXXXX";
     	 $mail->Subject = $subject;
     	 $mail->Body = $body;
     	 $mail->AddAddress($email);
@@ -145,11 +144,13 @@ return $s= "true";	}else {
 
 // TO VERIFY CODE
 	if(isset($_POST['verify'])){
+		global $code;
+		global $newCode;
 		$username_new=esc($_POST['username']);
-	$email=esc($_POST['email']);
+	    $email=esc($_POST['email']);
         $vcode = $_POST['code'];
-         $real_code = $_POST['real_code'];
-		 if($real_code===$vcode) { 
+        $real_code = $_SESSION['code'];
+		if($real_code===$vcode) { 
 			 return $v="true";
 		 }else {
 			 return $v="false";
