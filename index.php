@@ -35,7 +35,28 @@
 		
 <?php endforeach ?>
 	</div>
+	<?php  $prev = $page - 1;
+  		$next = $page + 1; 
+ 	 ?>
+  <nav aria-label="Page navigation example mt-5">
+            <ul class="pagination justify-content-center mt-4">
+                <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page < 1){ echo '#'; } else { echo "index.php?page=".$prev; } ?>">Previous</a>
+                </li>
 
+                <?php for($i = 1; $i <= $total_pages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="index.php?page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?>
+
+                <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page >= $total_pages){ echo '#'; } else {echo "index.php?page=".$next; } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
 		</div>
 		<!-- // Page content -->
 
