@@ -5,7 +5,7 @@
 <title>BlogSpot | Forgot Password </title>
 </head>
 <body>
-    <div class="container forgot_pass">
+    <div class="container col-12 forgot_pass">
 		<!-- navbar -->
 		<?php include('includes/navbar.php') ?>
         <?php include(ROOT_PATH . '/includes/errors.php') ?>

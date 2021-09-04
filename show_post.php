@@ -8,18 +8,18 @@
 	} 
 ?> 
 </head>
-<body style="background-color: #FBFCFF;">
-<div class="container">
+<body >
+<div class="container col-12">
 	<?php include('includes/navbar.php') ?>
 
 <?php foreach ( $post as $post): ?>
 	<title>BlogSpot | <?php echo $post['title'] ?></title>
 	<div class="show-post container-fluid w-50 ml-auto mr-auto mt-5 bg-light " >
 			<?php $u_id=$post['user_id'];
-		$name=getName($u_id); ?>
+			$name=getName($u_id); ?>
 	<?php
 		while ($row = $name->fetch_assoc()) { ?>
-  	     <p class="lead d-flex justify-content-end">Author Name: <?php echo $row['username']." " ?> </p> <?php
+  	     <p class="d-flex justify-content-end">Author Name: <?php echo $row['username']." " ?> </p> <?php
 	} ?>	
 				<h1 class="text-center pt-2"><?php echo $post['title'] ?></h1>
 				<div class="d-flex justify-content-center align-items-center">

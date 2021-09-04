@@ -7,7 +7,7 @@
 <body>
 
 
-<div class="container">
+<div class="container col-12" style="height: 100vh;">
 	<!-- Navbar -->
 	<!-- // Navbar -->
 <?php include( ROOT_PATH . '/includes/navbar.php'); ?>
@@ -32,12 +32,11 @@
 			</div>
 		</form>
 	</div>
-	
+
 </div>
 <!-- // container -->
 <!-- Footer -->
-	<?php include( ROOT_PATH . '/includes/footer.php'); ?>
+<?php include( ROOT_PATH . '/includes/footer.php'); ?>
 <!-- // Footer -->
-
-</body>
+	
 </html>

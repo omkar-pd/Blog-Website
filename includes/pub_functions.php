@@ -5,7 +5,7 @@ $total_pages="";
 $page="";
 function getPublishedPosts() {
 	global $conn,$total_pages,$page;
-	$results_per_page=4;
+	$results_per_page=6;
 	$sql = "SELECT * FROM posts";
 	$result = mysqli_query($conn, $sql);
 	if(!isset($_GET['page'])){
@@ -27,7 +27,7 @@ function getPublishedPosts() {
 }
 function getRecentPosts(){
 	global $conn,$total_pages,$page;
-	$results_per_page=4;
+	$results_per_page=6;
 	$sql = "SELECT * FROM posts";
 	$result = mysqli_query($conn, $sql);
 	if(!isset($_GET['page'])){

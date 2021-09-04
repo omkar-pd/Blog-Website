@@ -1,4 +1,4 @@
-<div class="footer bg-info ">
+<div class="footer ">
 			<p class="font-weight-bolder  d-flex justify-content-center align-items-center">Omkar &copy; <?php echo date('Y'); ?></p>
 		</div>
 	</div>

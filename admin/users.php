@@ -11,11 +11,11 @@
 <body>
 	<!-- admin navbar -->
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
-	<div class="container content row justify-content-center align-items-center">
+	<div class="container row content justify-content-center align-items-center col-12 m-1  p-1">
 		<!-- Left side menu -->
 		<?php include(ROOT_PATH . '/admin/includes/menu.php') ?>
 		<!-- Middle form - to create and edit  -->
-		<div class="action">
+		<div class="action col-lg-4 col-md-7 col-12">
 			<h1 class="page-title">Create/Edit Admin User</h1>
 			<form method="post" action="<?php echo BASE_URL . 'admin/users.php'; ?>" >
 				<!-- validation errors for the form -->
@@ -47,7 +47,7 @@
 		</div>
 	
 		<!-- Display records from DB-->
-		<div class="table-div">
+		<div class="table-div col-lg-6 col-12">
 			<!-- Display notification message -->
 			<?php include(ROOT_PATH . '/admin/includes/messages.php') ?>
 			<?php if (empty($admins)): ?>

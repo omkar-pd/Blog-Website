@@ -113,12 +113,6 @@ th {
 
 /* * DASHBOARD */
 
-.container {
-  width: 95%;
-  margin: 5px auto 50px;
-  border: 1px solid #bfbcb3;
-  padding: 10px 0px 50px;
-}
 .container:after {
   content: "";
   display: block;

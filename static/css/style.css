@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
+  background: whitesmoke;
 }
 /* HEADINGS DEFAULT */
 h1,
@@ -71,13 +72,13 @@ form input:focus {
   font-weight: 700;
 }
 .container {
-  width: 80%;
+  /* width: 80%; */
   margin: 0px auto;
 }
 /* NAVBAR */
 .navbar {
   height: auto !important;
-  /* height: 50% !important; */
+  background-color: #292929 !important;
 }
 .navbar .collapse .navbar-nav .nav-link:hover {
   color: red;
@@ -85,23 +86,30 @@ form input:focus {
 
 /* FOOTER */
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   height: 20px;
   right: 0;
-  bottom: 0;
+  bottom: 7px;
   left: 0;
   color: white;
-  text-align: center;
-  width: 80%;
+
+  width: 95%;
+  background-color: #292929;
   margin: 20px auto 0px;
   padding: 20px 0px;
 }
 /* BANNER */
 .banner {
   margin: 5px auto;
-  background-image: url(../images/bannerNew.jpg);
+  background-image: url(../images/bg-image.jpg);
   border-radius: 5px;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
+
+  min-height: 500px;
 }
 .banner .login-div .login-form input {
   background: red;
@@ -109,14 +117,44 @@ form input:focus {
 .banner .a:hover {
   color: blue !important;
 }
-
 /* CONTENT */
-.content .post .post_image {
-  height: 260px;
-  width: 100%;
-  background-size: 100%;
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-items: end;
 }
 
+.content .post .post_image {
+  min-height: 360px;
+  max-height: 360px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+/* POST: */
+.post {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  min-height: 500px;
+  background: white;
+}
+.post:hover {
+  transform: scale(1.05);
+  transition: linear;
+}
+.continue-reading {
+  width: 150px;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  /* color: rgb(24, 48, 89); */
+  color: white;
+  background: #276fbf;
+}
 /* NOTIFICATION MESSAGES */
 .message {
   width: 100%;
@@ -139,14 +177,9 @@ form input:focus {
   margin-left: 10px;
 }
 .logged_in_info {
-  text-align: right;
+  text-align: left;
 }
-/* POST: */
-.post {
-  padding: 2px;
-  margin-top: 5px;
-  border-top: 2px solid black;
-}
+
 /* SHOW POST */
 .show-post {
   width: 80% !important;
@@ -181,8 +214,12 @@ form input:focus {
   right: 11%;
 }
 /* MEDIA QURIES */
-
-@media only screen and (max-width: 732px) {
+@media only screen and (max-width: 872px) {
+  .content {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+@media only screen and (max-width: 752px) {
   .register_div {
     width: 100%;
   }
@@ -192,5 +229,11 @@ form input:focus {
   .forgot_pass form input {
     width: 100% !important;
     margin-top: 25px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .content {
+    grid-template-columns: 100%;
   }
 }

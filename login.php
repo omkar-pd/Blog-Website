@@ -5,7 +5,7 @@
 </head>
 <body>
 	
-	<div class="container">
+	<div class="container col-12">
 	<!-- Navbar -->
 	<?php include( ROOT_PATH . '/includes/navbar.php'); ?>
 	<div class="login_div" >

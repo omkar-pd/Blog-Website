@@ -9,26 +9,34 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container col-12">
 		<!-- navbar -->
 		<?php include('includes/navbar.php') ?>
         <?php include('includes/banner.php') ?>
 		<!-- Page content -->
 		<h2 class="content-title">Recent Articles</h2>
 			<hr>
-		<div class="content row flex-row  mt-2">
+		<div class="content mt-2">
 			
 
 <?php foreach ($posts as $post): ?>
-	<div class=" post col-lg-6 pt-2" >
-		<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="Image">
+		<?php $u_id=$post['user_id'];
+			$name=getName($u_id); ?>
+
+		<div class=" post p-3 pt-2">
+		<a href="show_post.php?id=<?php echo $post['id']; ?>">  <h3> <?php echo $post['title']; ?></h3></a>
+		<div class="d-flex justify-content-between align-items-center p-1" style="background-color: whitesmoke;">
 		
-			<div class="post_info">
-				<a href="show_post.php?id=<?php echo $post['id']; ?>">  <h1> <?php echo $post['title']; ?></h1></a>
-				<div class="d-flex justify-content-between m-1">
-					<span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-					<a href="show_post.php?id=<?php echo $post['id']; ?>"> <span class="read_more">Read more...</span> </a>
-                    </div>
+		<?php
+		while ($row = $name->fetch_assoc()) { ?>
+  	     <span class="p-2">Author Name: <?php echo $row['username']." " ?> </span> <?php
+	} ?>
+	<span class="p-2"><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span></div>
+		<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="Image">
+		<div class="post_info">
+		
+					<a href="show_post.php?id=<?php echo $post['id']; ?>"> <button class="continue-reading ">Continue Reading</button> </a>
+      
 				</div>
 			</div>
 			
