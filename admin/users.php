@@ -11,6 +11,7 @@
 <body>
 	<!-- admin navbar -->
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
+	<?php include(ROOT_PATH . '/includes/banner.php') ?>
 	<div class="container row content justify-content-center align-items-center col-12 m-1  p-1">
 		<!-- Left side menu -->
 		<?php include(ROOT_PATH . '/admin/includes/menu.php') ?>

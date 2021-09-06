@@ -10,18 +10,19 @@
 <body>
 	<!-- admin navbar -->
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
+	<?php include(ROOT_PATH . '/includes/banner.php') ?>
 	
-	<div class="container content">
+	<div class="container content row ml-auto mr-auto">
 		<!-- Left side menu -->
 		<?php include(ROOT_PATH . '/admin/includes/menu.php') ?>
 		<!-- Display records from DB-->
-		<div class="table-div"  style="width: 80%;">
+		<div class="table-div col-lg-10 col-md-12" >
 			<!-- Display notification message -->
 			<?php include(ROOT_PATH . '/admin/includes/messages.php') ?>
 			<?php if (empty($posts)): ?>
 				<h1 style="text-align: center; margin-top: 20px;">No posts in the database.</h1>
 			<?php else: ?>
-				<table class="table">
+				<table class="table" style="width: 100%;">
 						<thead>
 						<th>No</th>
 						<th>Author</th>

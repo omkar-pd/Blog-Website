@@ -198,17 +198,12 @@ th {
 }
 
 /* Table div (Displaying records from DB) */
-.table-div {
-  float: left;
-  width: 47%;
-}
+
 .table-div .message {
   width: 90%;
   margin-top: 20px;
 }
-.table-div table {
-  width: 90%;
-}
+
 .table-div a.fa {
   color: white;
   padding: 3px;

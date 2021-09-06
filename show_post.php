@@ -11,7 +11,7 @@
 <body >
 <div class="container col-12">
 	<?php include('includes/navbar.php') ?>
-
+	<?php include('includes/banner.php') ?>
 <?php foreach ( $post as $post): ?>
 	<title>BlogSpot | <?php echo $post['title'] ?></title>
 	<div class="show-post container-fluid w-50 ml-auto mr-auto mt-5 bg-light " >

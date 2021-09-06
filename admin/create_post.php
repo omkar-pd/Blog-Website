@@ -21,7 +21,7 @@
 				<input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
 				<input type="text" name="title" value="<?php echo $title; ?>" placeholder="Title">
 				<label style="float: left; margin: 5px auto 5px;">Featured image</label>
-				<input type="file" name="featured_image" >
+				<input type="file" name="featured_image">
 				<textarea name="body" id="body" cols="30" rows="10"><?php echo $body; ?></textarea>
 				<?php if ($isEditingPost === true): ?> 
 					<button type="submit" class="btn" name="update_post">UPDATE</button>

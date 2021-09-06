@@ -33,11 +33,11 @@
 	} ?>
 	<span class="p-2"><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span></div>
 		<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="Image">
-		<div class="post_info">
 		
-					<a href="show_post.php?id=<?php echo $post['id']; ?>"> <button class="continue-reading ">Continue Reading</button> </a>
+		
+					<a href="show_post.php?id=<?php echo $post['id']; ?>" > <button class="continue-reading ">Continue Reading</button> </a>
       
-				</div>
+				
 			</div>
 			
 		

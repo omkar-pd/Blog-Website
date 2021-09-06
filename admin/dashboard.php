@@ -4,6 +4,7 @@
 	<title>Admin | Dashboard</title>
 </head>
 <body>
+	
 	<div class="header">
 		<div class="logo">
 			<a href="<?php echo BASE_URL .'admin/dashboard.php' ?>">
@@ -19,6 +20,7 @@
 		<?php endif ?>
 	</div>
 	<!-- if user is Admin -->
+	<?php include(ROOT_PATH . '/includes/banner.php') ?>
 <?php	if ( in_array($_SESSION['user']['role'], ["Admin"])) { 
 				$_SESSION['message'] = "You are now logged in";
 		?>

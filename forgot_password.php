@@ -4,21 +4,23 @@
 <?php  include('includes/head_section.php'); ?>
 <title>BlogSpot | Forgot Password </title>
 </head>
-<body>
-    <div class="container col-12 forgot_pass">
-		<!-- navbar -->
-		<?php include('includes/navbar.php') ?>
-        <?php include(ROOT_PATH . '/includes/errors.php') ?>
+<body>	<!-- navbar -->
+   <?php include('includes/navbar.php') ?>
+      <?php include('includes/banner.php') ?>
+    
+      <div class="container col-12 forgot_pass m-lg-5">
+	
+		  <?php include(ROOT_PATH . '/includes/errors.php') ?>
         <form class="d-flex flex-column justify-content-center align-items-center" action="forgot_password.php" method="post">
             <input class="w-50" type="text" name="username" placeholder="Enter your username"  required value="<?php if(!empty($username_new)){echo $username_new;} ?>">
             <input class="w-50" type="email" name="email" placeholder="Enter your Email" value="<?php if(!empty($email)){ echo $email;} ?>" required>
-            <button class="btn btn-primary" name="forgot_pass">Submit</button>
+            <button class="btn btn-primary" name="forgot_pass" style="min-width: 200px; width: fit-content;">Submit</button>
             <?php if(!empty($s)){
                 if($s==="true"){ ?>
                  <form action="forgot_password.php" method="post">
                 
                  <input type="text" class="w-50" name="code" placeholder="Enter the code">
-                 <button class="btn btn-primary" name="verify">Verify</button>
+                 <button class="btn btn-primary" name="verify" style="min-width: 200px; width: fit-content;">Verify</button>
               </form>
                
 
@@ -38,7 +40,7 @@
                 <input  class="pass_field w-50" name="confirm_pass" type="password" placeholder="Confirm New Password" required>
                 <img class="show_pass" src="./static/images/eye-fill.svg" alt="eye" style="position: absolute;right: 191px;top: 21px;">
                    </div>
-                <button name="change_pass" class="btn btn-info" >Submit</button>
+                <button name="change_pass" class="btn btn-info" style="min-width: 200px; width: fit-content;">Submit</button>
                 
  </form>
  </form>

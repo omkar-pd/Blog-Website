@@ -101,30 +101,13 @@ form input:focus {
   margin: 20px auto 0px;
   padding: 20px 0px;
 }
-/* BANNER */
-.banner {
-  margin: 5px auto;
-  background-image: url(../images/bg-image.jpg);
-  border-radius: 5px;
-  background-size: cover;
-  background-position: center;
 
-  min-height: 500px;
-}
-.banner .login-div .login-form input {
-  background: red;
-}
-.banner .a:hover {
-  color: blue !important;
-}
 /* CONTENT */
 .content {
   display: grid;
-  grid-template-columns: repeat(3, 32%);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  align-items: end;
+  grid-gap: 20px;
 }
 
 .content .post .post_image {
@@ -213,6 +196,7 @@ form input:focus {
   top: 30%;
   right: 11%;
 }
+
 /* MEDIA QURIES */
 @media only screen and (max-width: 872px) {
   .content {
