@@ -14,7 +14,7 @@
 		<?php include('includes/navbar.php') ?>
         <?php include('includes/banner.php') ?>
 		<!-- Page content -->
-		<h2 class="content-title">Articles</h2>
+		<h2 class="content-title m-5">Articles</h2>
 			<hr>
 		<div class="content mt-2">
 			

@@ -20,26 +20,16 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="/Blog-Website/static/images/c1.jpg" class="d-block w-100" alt="image 1">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
+          </div>
     <div class="carousel-item">
       <img src="/Blog-Website/static/images/c2.jpg" class="d-block w-100" alt="image 2">
-      <div class="carousel-caption d-none d-md-block">
-  
-      </div>
-    </div>
+          </div>
     <div class="carousel-item">
       <img src="/Blog-Website/static/images/c3.jpg" class="d-block w-100" alt="image 3">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
+          </div>
      <div class="carousel-item">
       <img src="/Blog-Website/static/images/c4.jpg" class="d-block w-100" alt="image 4">
-      <div class="carousel-caption d-none d-md-block">
-
-      </div>
-    </div>
+          </div>
   </div>
  
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
