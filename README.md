@@ -3,7 +3,7 @@
  
 HOMEPAGE:
 
-![BlogSpot   Home](https://user-images.githubusercontent.com/81369580/129002353-eba3ce95-bb62-45c7-b072-16f0bef478a2.png)
+![BlogSpot   Home](https://user-images.githubusercontent.com/81369580/132175538-bd13a967-f93e-45dd-a8ba-03e3a9a1799b.png)
 
 
 Article:
