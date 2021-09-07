@@ -30,21 +30,15 @@
 		<?php
 		while ($row = $name->fetch_assoc()) { ?>
   	     <span class="p-2">Author Name: <?php echo $row['username']." " ?> </span> <?php
-	} ?>
+			} ?>
 	<span class="p-2"><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span></div>
 		<img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="Image">
-		
-		
-					<a href="show_post.php?id=<?php echo $post['id']; ?>" > <button class="continue-reading ">Continue Reading</button> </a>
-      
-				
-			</div>
+		<a href="show_post.php?id=<?php echo $post['id']; ?>" > <button class="continue-reading ">Continue Reading</button> </a>
+		</div>
 			
-		
 <?php endforeach ?>
 	</div>
-	
-		</div>
+</div>
 		<?php  $prev = $page - 1;
   		$next = $page + 1; 
  	 ?>

@@ -124,7 +124,7 @@ $sql = "SELECT * FROM users WHERE username='$username_new'
    		 $mail->Port = 465; // or 587
     	 $mail->IsHTML(true);
     	 $mail->Username = "XXXXXX@gmail.com";
-    	 $mail->Password = "XXXXXXXX";
+    	 $mail->Password = "XXXXXX";
     	 $mail->Subject = $subject;
     	 $mail->Body = $body;
     	 $mail->AddAddress($email);
