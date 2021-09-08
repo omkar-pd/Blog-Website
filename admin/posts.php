@@ -37,7 +37,7 @@
 							<td><?php echo $post['author']; ?></td>
 							<td>
 								<a 	target="_blank"
-								href="">
+								href="../show_post.php?id=<?php echo $post['id']; ?>">
 									<?php echo $post['title']; ?>	
 								</a>
 							</td>
