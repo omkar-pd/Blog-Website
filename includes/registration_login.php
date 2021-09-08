@@ -45,7 +45,8 @@
 
 			// id of created user
 			$reg_user_id = mysqli_insert_id($conn); 
-
+			$query2= "INSERT INTO profileinfo (user_id) VALUES ($reg_user_id)";
+			mysqli_query($conn, $query2);
 			// put logged in user into session array
 			$_SESSION['user'] = getUserById($reg_user_id);
 

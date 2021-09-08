@@ -147,4 +147,22 @@ function deleteAdmin($admin_id) {
 		exit(0);
 	}
 }
+
+
+function getUserInfo($userid){
+	global $conn;
+	$sql = "SELECT * from profileinfo WHERE user_id=$userid";
+	// $sql = " SELECT * from profileinfo CROSS JOIN posts WHERE posts.user_id=$userid AND profileinfo.user_id=$userid ";
+	$result = mysqli_query($conn, $sql);
+    $userinfo = mysqli_fetch_all($result,MYSQLI_ASSOC);
+	return $userinfo;
+}
+
+function getUserPosts($userid){
+	global $conn;
+	$sql = "SELECT * from posts WHERE user_id=$userid";
+	$result = mysqli_query($conn, $sql);
+    $userposts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+	return $userposts;
+}
 ?>

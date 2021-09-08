@@ -66,8 +66,8 @@
 						<tr>
 							<td><?php echo $key + 1; ?></td>
 							<td>
-								<?php echo $admin['username']; ?>, &nbsp;
-								<?php echo $admin['email']; ?>	
+								<a href="user_profile.php?userid=<?php echo $admin['id'] ?>"> <?php echo $admin['username']; ?>, &nbsp;
+								<?php echo $admin['email']; ?>	</a>
 							</td>
 							<td><?php echo $admin['role']; ?></td>
 							<td>

@@ -243,3 +243,55 @@ th {
   text-align: left;
   margin-left: 10px;
 }
+
+/* User Profile */
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.profile-wrapper .profile-name {
+  display: flex;
+}
+.profile-image {
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.user-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+}
+.user-blogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 5px;
+  border-radius: 5px;
+  min-height: 500px;
+  background: white;
+}
+.user-blogs * {
+  margin: 0 auto;
+}
+.post_image {
+  object-fit: cover;
+  width: 85%;
+  height: 300px;
+}
+.continue-reading {
+  width: 150px;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  /* color: rgb(24, 48, 89); */
+  color: white;
+  background: #276fbf;
+}
