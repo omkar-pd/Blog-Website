@@ -9,7 +9,7 @@
 <?php include( ROOT_PATH . '/includes/navbar.php'); ?>
 	<!-- // Navbar -->
 <?php include('includes/banner.php') ?>
-<div class="container col-12" style="height: 100vh;">
+<div class="container col-12">
 	<div class="register_div" >
 		<form method="post" action="register.php" >
 			<h2>Register on BlogSpot</h2>

@@ -2,6 +2,7 @@
 // Post variables
 $post_id = 0;
 $isEditingPost = false;
+$img;
 $published = 0;
 $title = "";
 $body = "";
@@ -101,12 +102,13 @@ function createPost($request_values)
 	//  sets post fields on form for editing
 	function editPost($role_id)
 	{
-		global $conn, $title, $body, $published, $isEditingPost, $post_id;
+		global $conn, $title, $body, $published, $isEditingPost, $post_id,$img;
 		$sql = "SELECT * FROM posts WHERE id=$role_id LIMIT 1";
 		$result = mysqli_query($conn, $sql);
 		$post = mysqli_fetch_assoc($result);
 		// set form values on the form to be updated
 		$title = $post['title'];
+		$img= $post['image'];
 		$body = $post['content'];
 	}
 	function updatePost($request_values)

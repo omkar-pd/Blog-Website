@@ -12,6 +12,7 @@
 <div class="container col-12">
 	<?php include('includes/navbar.php') ?>
 	<?php include('includes/banner.php') ?>
+<?php if (isset($_SESSION['user'])) { ?>
 <?php foreach ( $post as $post): ?>
 	<title>BlogSpot | <?php echo $post['title'] ?></title>
 	<div class="show-post container-fluid w-50 ml-auto mr-auto mt-5 bg-light " >
@@ -31,6 +32,15 @@
 			</div>
 	</div>
 <?php endforeach ?>
-</div>
+
+<?php } else {?>
+	<div class="d-flex flex-column justify-content-center align-items-center">
+	<h2 class="p-5">Please login to read the blogs</h2>
+	<button class="btn btn-info" style="max-width: 215px;"><a class="text-dark" href="./login.php">Click here to login</a></button>
+	<button class="btn btn-info" style="max-width: 215px;"><a class="text-dark" href="./register.php">Click here to register</a></button>
+	</div>
+	<?php }?>
 	<?php include( ROOT_PATH . '/includes/footer.php'); ?>
+	</div>
+	
 </body>

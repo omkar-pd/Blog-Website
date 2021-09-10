@@ -10,7 +10,6 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
   min-height: 100%;
   background: whitesmoke;
 }
@@ -89,7 +88,7 @@ form input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   height: 20px;
   right: 0;
   bottom: 7px;
