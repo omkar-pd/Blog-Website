@@ -20,7 +20,7 @@
 			$name=getName($u_id); ?>
 	<?php
 		while ($row = $name->fetch_assoc()) { ?>
-  	     <p class="d-flex justify-content-end">Author Name: <?php echo $row['username']." " ?> </p> <?php
+  	     <p class="d-flex justify-content-end">Author Name: <a href="./admin/user_profile.php?userid=<?php echo $post['user_id'] ?>"> <?php echo $row['username']." " ?> </a></p> <?php
 	} ?>	
 				<h1 class="text-center pt-2"><?php echo $post['title'] ?></h1>
 				<div class="d-flex justify-content-center align-items-center">
