@@ -7,6 +7,8 @@ $role = "";
 $email = "";
 // general variables
 $errors = [];
+$total_pages="";
+$page="";
 
 
 // -  Admin users actions
@@ -32,12 +34,27 @@ if (isset($_GET['delete-admin'])) {
 }
 //  Returns all admin users and their corresponding roles
 function getAdminUsers(){
-	global $conn, $roles;
+	global $conn, $roles,$total_pages,$page;
+	$results_per_page=6;
 	// $sql = "SELECT * FROM users WHERE role IS NOT NULL";
 	$sql = "SELECT * FROM users";
 	$result = mysqli_query($conn, $sql);
-	$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	return $users;
+	// $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+	if(!isset($_GET['page'])){
+            $page=1;
+        }else{
+            $page=$_GET['page'];
+        }
+	$i=0;
+	$num_of_rows = mysqli_num_rows($result);
+	$total_pages=ceil($num_of_rows/$results_per_page);
+	$start_limit=($page-1)*$results_per_page;
+        $sql="SELECT * FROM users LIMIT ".$start_limit.','.$results_per_page;
+        $result=mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > $i){
+			$users = mysqli_fetch_all($result,MYSQLI_ASSOC);
+			return $users;
+		}
 }
 
 // * - Escapes form submitted value, hence, preventing SQL injection
@@ -153,11 +170,28 @@ function getUserInfo($userid){
 }
 
 function getUserPosts($userid){
-	global $conn;
+	global $conn,$total_pages,$page;
+	$results_per_page=4;
 	$sql = "SELECT * from posts WHERE user_id=$userid";
 	$result = mysqli_query($conn, $sql);
     $userposts = mysqli_fetch_all($result,MYSQLI_ASSOC);
-	return $userposts;
+	if(!isset($_GET['page'])){
+            $page=1;
+        }else{
+            $page=$_GET['page'];
+        }
+	$i=0;
+	$num_of_rows = mysqli_num_rows($result);
+	$total_pages=ceil($num_of_rows/$results_per_page);
+	$start_limit=($page-1)*$results_per_page;
+	$sql = "SELECT * from posts WHERE user_id=$userid LIMIT ".$start_limit.','.$results_per_page;
+	$result=mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > $i){
+		// fetch all posts 
+		$userposts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+		return $userposts;
+		}
+	// return $userposts;
 }
 
 if(isset($_POST['update_user_profile'])){

@@ -34,7 +34,7 @@
 					<?php foreach ($posts as $key => $post): ?>
 						<tr>
 							<td><?php echo $key + 1; ?></td>
-							<td><?php echo $post['author']; ?></td>
+							<td><a href="user_profile.php?userid=<?php echo $post['user_id'] ?>"> <?php echo $post['author']; ?> </a></td>
 							<td>
 								<a 	target="_blank"
 								href="../show_post.php?id=<?php echo $post['id']; ?>">
@@ -56,6 +56,29 @@
 					</tbody>
 				</table>
 			<?php endif ?>
+		<?php  $prev = $page - 1;
+  		$next = $page + 1; 
+ 	 ?>
+  <nav class="mt-5">
+            <ul class="pagination justify-content-center mt-4">
+                <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page < 1){ echo '#'; } else { echo "posts.php?page=".$prev; } ?>">Previous</a>
+                </li>
+
+                <?php for($i = 1; $i <= $total_pages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="posts.php?page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?>
+
+                <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page >= $total_pages){ echo '#'; } else {echo "posts.php?page=".$next; } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
+		</div>
 		</div>
 	</div>
 </body>

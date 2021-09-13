@@ -7,16 +7,17 @@ $published = 0;
 $title = "";
 $body = "";
 $featured_image = "";
+$total_pages="";
+$page="";
+$sql="";
 
 // -  Post functions
 
 // get all posts from DB
 function getAllPosts()
 {
-	global $conn;
-	
-	// Admin can view all posts
-	// Author can only view their posts
+	global $conn,$total_pages,$page,$sql;
+	$results_per_page=6;
 	if ($_SESSION['user']['role'] == "Admin") {
 		$sql = "SELECT * FROM posts";
 	} elseif ($_SESSION['user']['role'] == "Author") {
@@ -25,13 +26,34 @@ function getAllPosts()
 	}
 	$result = mysqli_query($conn, $sql);
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-	$final_posts = array();
-	foreach ($posts as $post) {
+	if(!isset($_GET['page'])){
+            $page=1;
+        }else{
+            $page=$_GET['page'];
+        }
+		$i=0;
+	$num_of_rows = mysqli_num_rows($result);
+	$total_pages=ceil($num_of_rows/$results_per_page);
+	$start_limit=($page-1)*$results_per_page;
+	if ($_SESSION['user']['role'] == "Admin") {
+		$sql = $sql="SELECT * FROM posts LIMIT ".$start_limit.','.$results_per_page;
+	}  elseif ($_SESSION['user']['role'] == "Author") {
+		$user_id = $_SESSION['user']['id'];
+		$sql = "SELECT * FROM posts WHERE user_id=$user_id LIMIT ".$start_limit.','.$results_per_page;
+	}
+	$result = mysqli_query($conn, $sql);
+	if(mysqli_num_rows($result) > $i){
+			$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+			$final_posts = array();
+		foreach ($posts as $post) {
 		$post['author'] = getPostAuthorById($post['user_id']);
 		array_push($final_posts, $post);
+	
+		}
+		return $final_posts;
 	}
-	return $final_posts;
+	
+	
 }
 // get the author/username of a post
 function getPostAuthorById($user_id)

@@ -65,7 +65,8 @@
 
 <div class="user-content">
     
-<?php 
+<?php
+if(!empty($userposts)) { 
 foreach($userposts as $user){?>
 <div class="user-blogs">
 	<a href="../show_post.php?id=<?php echo $user['id']; ?> " target="_blank">  <h6> <?php echo $user['title']; ?></h6></a>
@@ -73,8 +74,32 @@ foreach($userposts as $user){?>
 		<img src="<?php echo BASE_URL . '/static/images/' . $user['image']; ?>" class="post_image" alt="Image">
 		<a href="../show_post.php?id=<?php echo $user['id']; ?>"target="_blank" > <button class="continue-reading"  >Continue Reading</button> </a>
 </div>
- <?php } ?>
+ <?php }?>
 </div>
+ <?php  $prev = $page - 1;
+  		$next = $page + 1; 
+ 	 ?>
+  <nav class="mt-5">
+            <ul class="pagination justify-content-center mt-4">
+                <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page < 1){ echo '#'; } else { echo "user_profile.php?page=$prev&userid=$userid "; } ?>">Previous</a>
+                </li>
+
+                <?php for($i = 1; $i <= $total_pages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="user_profile.php?userid=<?php echo $userid?>&page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?>
+
+                <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page >= $total_pages){ echo '#'; } else {echo "user_profile.php?page=$next&userid=$userid "; } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
+         <?php }?>
+   
 </body>
 
 <style>

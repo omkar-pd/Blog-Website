@@ -66,7 +66,7 @@
 						<tr>
 							<td><?php echo $key + 1; ?></td>
 							<td>
-								<a href="user_profile.php?userid=<?php echo $admin['id'] ?>"> <?php echo $admin['username']; ?>, &nbsp;
+								<a target="_blank" href="user_profile.php?userid=<?php echo $admin['id'] ?>"> <?php echo $admin['username']; ?>, &nbsp;
 								<?php echo $admin['email']; ?>	</a>
 							</td>
 							<td><?php echo $admin['role']; ?></td>
@@ -85,8 +85,31 @@
 					</tbody>
 				</table>
 			<?php endif ?>
+			<?php  $prev = $page - 1;
+  		$next = $page + 1; 
+ 	 ?>
+  <nav class="mt-5">
+            <ul class="pagination justify-content-center mt-4">
+                <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page < 1){ echo '#'; } else { echo "users.php?page=".$prev; } ?>">Previous</a>
+                </li>
+
+                <?php for($i = 1; $i <= $total_pages; $i++ ): ?>
+                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+                    <a class="page-link" href="users.php?page=<?= $i; ?>"> <?= $i; ?> </a>
+                </li>
+                <?php endfor; ?>
+
+                <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
+                    <a class="page-link"
+                        href="<?php if($page >= $total_pages){ echo '#'; } else {echo "users.php?page=".$next; } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
 		</div>
 		<!-- // Display records from DB -->
 	</div>
+	
 </body>
 </html>
