@@ -14,6 +14,9 @@
         <a class="nav-link text-white" href="recent_articles.php">Recent Articles <span class="sr-only">(current)</span></a>
       </li>
        <?php if (isset($_SESSION['user']['username'])) { ?>
+          <li class="nav-item active">
+        <a class="nav-link text-white" href="./admin/user_profile.php?userid=<?php echo $_SESSION['user']['id'] ?>"><?php echo $_SESSION['user']['username'] ?> <span class="sr-only">(current)</span></a>
+      </li>
       <?php	if ( in_array($_SESSION['user']['role'], ["Admin","Author"])) {  ?> 
        <li class="nav-item active">
  <a class="nav-link text-white" href="<?php BASE_URL ?>admin/dashboard.php">Dashboard <span class="sr-only">(current)</span></a>

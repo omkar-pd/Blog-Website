@@ -43,17 +43,14 @@ function getAllPosts()
 	}
 	$result = mysqli_query($conn, $sql);
 	if(mysqli_num_rows($result) > $i){
-			$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
-			$final_posts = array();
+		$posts = mysqli_fetch_all($result,MYSQLI_ASSOC);
+		$final_posts = array();
 		foreach ($posts as $post) {
 		$post['author'] = getPostAuthorById($post['user_id']);
 		array_push($final_posts, $post);
-	
 		}
 		return $final_posts;
 	}
-	
-	
 }
 // get the author/username of a post
 function getPostAuthorById($user_id)

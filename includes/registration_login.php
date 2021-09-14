@@ -79,6 +79,7 @@
 				// get id of created user
 				$reg_user_id = mysqli_fetch_assoc($result)['id']; 
 				// put logged in user into session array
+				$_SESSION['user_id']=$reg_user_id;
 				$_SESSION['user'] = getUserById($reg_user_id); 
 				// if user is admin, redirect to admin area
 				if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {

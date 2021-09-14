@@ -196,6 +196,13 @@ form input:focus {
   right: 11%;
 }
 
+/* Remove Comment button */
+.remove_comment {
+  border: none;
+  background-color: transparent;
+  color: blue;
+}
+
 /* MEDIA QURIES */
 @media only screen and (max-width: 872px) {
   .content {
