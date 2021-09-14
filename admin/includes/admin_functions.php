@@ -194,29 +194,28 @@ function getUserPosts($userid){
 	// return $userposts;
 }
 
-if(isset($_POST['update_user_profile'])){
-global $conn;
-$userid = esc($_POST['userid']);
-$firstName=esc($_POST['fname']);
-$lastName=esc($_POST['lname']);
-$address = esc($_POST['address']);
-$mobno= esc($_POST['mobno']);
-$desc=esc($_POST['description']);
-$twitter=esc($_POST['twitter']);
-$instagram=esc($_POST['instagram']);
-$facebook=esc($_POST['facebook']);
-if(empty($twitter)){
-	$twitter="#";
-}
-if(empty($instagram)){
-	$instagram="#";
-}
-if(empty($facebook)){
-	$facebook="#";
-}
-$query = "UPDATE profileinfo SET firstName='$firstName', lastName='$lastName', address='$address', mobno=$mobno, description='$desc',twitter='$twitter',instagram='$instagram',facebook='$facebook' WHERE user_id='$userid' ";
-// $query = "UPDATE profileinfo SET description='$desc' WHERE user_id='$userid' ";
-            	if(mysqli_query($conn, $query)){ 
+		if(isset($_POST['update_user_profile'])){
+		global $conn;
+		$userid = esc($_POST['userid']);
+		$firstName=esc($_POST['fname']);
+		$lastName=esc($_POST['lname']);
+		$address = esc($_POST['address']);
+		$mobno= esc($_POST['mobno']);
+		$desc=esc($_POST['description']);
+		$twitter=esc($_POST['twitter']);
+		$instagram=esc($_POST['instagram']);
+		$facebook=esc($_POST['facebook']);
+		if(empty($twitter)){
+			$twitter="#";
+		}
+		if(empty($instagram)){
+			$instagram="#";
+		}
+		if(empty($facebook)){
+			$facebook="#";
+		}
+		$query = "UPDATE profileinfo SET firstName='$firstName', lastName='$lastName', address='$address', mobno=$mobno, description='$desc',twitter='$twitter',instagram='$instagram',facebook='$facebook' WHERE user_id='$userid' ";
+           	if(mysqli_query($conn, $query)){ 
 				header('location: user_profile.php?userid='.$userid);
 				exit(0);
 			} else {
@@ -224,14 +223,14 @@ $query = "UPDATE profileinfo SET firstName='$firstName', lastName='$lastName', a
 				echo (mysqli_error($conn));
 			}
 			echo $userid;
-// echo $firstName . $lastName . $address . $mobno . $desc . $twitter . $instagram . $facebook;
-}
+			// echo $firstName . $lastName . $address . $mobno . $desc . $twitter . $instagram . $facebook;
+		}
 
-function esc(String $value){
-	global $conn;
-	// remove empty space sorrounding string
-	$val = trim($value); 
-	$val = mysqli_real_escape_string($conn, $value);
-	return $val;
-}
+		function esc(String $value){
+		global $conn;
+		// remove empty space sorrounding string
+		$val = trim($value); 
+		$val = mysqli_real_escape_string($conn, $value);
+		return $val;
+		}
 ?>

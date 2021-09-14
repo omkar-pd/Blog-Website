@@ -100,45 +100,46 @@
 	}
 
 // Forgot password
-if (isset($_POST['forgot_pass'])) {
-global $conn;
-global $newCode;
-$username_new=esc($_POST['username']);
-$email=esc($_POST['email']);
-$sql = "SELECT * FROM users WHERE username='$username_new' 
+	if (isset($_POST['forgot_pass'])) {
+			global $conn;
+			global $newCode;
+			$username_new=esc($_POST['username']);
+			$email=esc($_POST['email']);
+			$sql = "SELECT * FROM users WHERE username='$username_new' 		
 								AND email='$email' LIMIT 1";
-		$result = mysqli_query($conn, $sql);
-		$user = mysqli_fetch_assoc($result);
-		if ($user) { // if user exists
+			$result = mysqli_query($conn, $sql);
+			$user = mysqli_fetch_assoc($result);
+			if ($user) { // if user exists
 			if ($user['username'] === $username_new && $user['email']===$email) {
-		$vcode="";
-		$real_code="";
-   		$subject="Blog Website Email Verification";
-   		$code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 6);
-   		$body = "Your Verification Code is : " . $code;
-		$_SESSION['code']=$code;
-   		 $mail = new PHPMailer\PHPMailer\PHPMailer();
-   		 $mail->IsSMTP(); // enable SMTP
-   		 $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
-   		 $mail->SMTPAuth = true; // authentication enabled
-   		 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-    	 $mail->Host = "smtp.gmail.com";
-   		 $mail->Port = 465; // or 587
-    	 $mail->IsHTML(true);
-    	 $mail->Username = "XXXXXX@gmail.com";
-    	 $mail->Password = "XXXXXX";
-    	 $mail->Subject = $subject;
-    	 $mail->Body = $body;
-    	 $mail->AddAddress($email);
+			$vcode="";
+			$real_code="";
+   			$subject="Blog Website Email Verification";
+   			$code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 6);
+   			$body = "Your Verification Code is : " . $code;
+			$_SESSION['code']=$code;
+   			 $mail = new PHPMailer\PHPMailer\PHPMailer();
+   			 $mail->IsSMTP(); // enable SMTP
+   			 $mail->SMTPDebug = 0; // debugging: 1 = errors and messages, 2 = messages only
+   			 $mail->SMTPAuth = true; // authentication enabled
+   			 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+    		 $mail->Host = "smtp.gmail.com";
+   			 $mail->Port = 465; // or 587
+    		 $mail->IsHTML(true);
+    		 $mail->Username = "XXXXXX@gmail.com";
+    		 $mail->Password = "XXXXXX";
+    		 $mail->Subject = $subject;
+    		 $mail->Body = $body;
+    		 $mail->AddAddress($email);
 
-     if(!$mail->Send()) {
-       echo '<script type="text/JavaScript">  alert("Email Failed") . ;
-     </script>'; 
-     } else {
-echo '<script type="text/JavaScript">  alert("Email sent successfully") . ;
-     </script>';     }
-   }
-return $s= "true";	}else {
+     		if(!$mail->Send()) {
+       		echo '<script type="text/JavaScript">  alert("Email Failed") . ;
+     		</script>'; 
+    			} else {
+			echo '<script type="text/JavaScript">  alert("Email sent successfully") . ;
+   			  </script>';     
+			}
+}
+			return $s= "true";	}else {
 			return $s= "false";
 	}	
 }
@@ -159,21 +160,21 @@ return $s= "true";	}else {
    }			
 
 // New Password
-if(isset($_POST['change_pass'])){
-	global $conn;
-	$username_new=esc($_POST['username']);
-	$email=esc($_POST['email']);
-	$password_1=$_POST['new_pass'];
-	$password_2=$_POST['confirm_pass'];
-	if($password_1===$password_2){
-		$password = md5($password_1);//encrypt the password
+			if(isset($_POST['change_pass'])){
+			global $conn;
+			$username_new=esc($_POST['username']);
+			$email=esc($_POST['email']);
+			$password_1=$_POST['new_pass'];
+			$password_2=$_POST['confirm_pass'];
+			if($password_1===$password_2){
+			$password = md5($password_1);//encrypt the password
 			$query = "UPDATE users SET password='$password', updated_at=now() WHERE username='$username_new' AND email='$email'";
 			$result=mysqli_query($conn, $query);
 			if ($result) { 
 				echo '<script type="text/JavaScript"> alert("Given username and email does not exists in our system");</script>';
 				header('location: login.php');
 			}
-	}else {
+			}else {
 		array_push($errors,"Passwords do not match");
 	}
 } 

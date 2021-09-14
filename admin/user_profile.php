@@ -27,29 +27,29 @@
                                     <li><a href="<?php echo $user['twitter'] ?>"><i class="bi bi-twitter"></i></a></li>
                                     <li><a href="<?php echo $user['instagram'] ?>"><i class="bi bi-instagram"></i></a></li>
                                     <li><a href="<?php echo $user['facebook'] ?>" ><i class="bi bi-facebook"></i></a></li>
-                                </ul>
-                        </div>
-                        <div class="col-sm-8">
-                            <div class="card-block">
-                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Address</p>
-                                        <h6 class="text-muted f-w-400"><?php echo $user['address'] ;?></h6>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">Phone</p>
-                                        <h6 class="text-muted f-w-400"><?php echo $user['mobno'] ?></h6>
-                                    </div>
-                                </div>
-                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Description</h6>
-                                <div class="row">
-                                    <div class="col-12">
-                                    <h6 class="text-muted f-w-400"><?php echo $user['description'] ?></h6>
-                                    </div>
-                                    </div>
-                                </div>
+                            </ul>
                             </div>
+                        <div class="col-sm-8">
+                        <div class="card-block">
+                        <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                        <div class="row">
+                        <div class="col-sm-6">
+                        <p class="m-b-10 f-w-600">Address</p>
+                        <h6 class="text-muted f-w-400"><?php echo $user['address'] ;?></h6>
+                        </div>
+                        <div class="col-sm-6">
+                        <p class="m-b-10 f-w-600">Phone</p>
+                        <h6 class="text-muted f-w-400"><?php echo $user['mobno'] ?></h6>
+                        </div>
+                        </div>
+                        <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Description</h6>
+                        <div class="row">
+                        <div class="col-12">
+                        <h6 class="text-muted f-w-400"><?php echo $user['description'] ?></h6>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -59,48 +59,42 @@
 </div>
 <?php }?>
 
-
-
- 
-
-<div class="user-content">
+        <div class="user-content">
     
-<?php
-if(!empty($userposts)) { 
-foreach($userposts as $user){?>
-<div class="user-blogs">
-	<a href="../show_post.php?id=<?php echo $user['id']; ?> " target="_blank">  <h6> <?php echo $user['title']; ?></h6></a>
-	<span><?php echo date("F j, Y ", strtotime($user["created_at"])); ?></span>
+        <?php
+        if(!empty($userposts)) { 
+        foreach($userposts as $user){?>
+        <div class="user-blogs">
+    	<a href="../show_post.php?id=<?php echo $user['id']; ?> " target="_blank">  <h6> <?php echo $user['title']; ?></h6></a>
+	    <span><?php echo date("F j, Y ", strtotime($user["created_at"])); ?></span>
 		<img src="<?php echo BASE_URL . '/static/images/' . $user['image']; ?>" class="post_image" alt="Image">
 		<a href="../show_post.php?id=<?php echo $user['id']; ?>"target="_blank" > <button class="continue-reading"  >Continue Reading</button> </a>
-</div>
- <?php }?>
-</div>
- <?php  $prev = $page - 1;
+        </div>
+        <?php }?>
+        </div>
+        <?php  
+        $prev = $page - 1;
   		$next = $page + 1; 
- 	 ?>
-  <nav class="mt-5">
-            <ul class="pagination justify-content-center mt-4">
-                <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
-                    <a class="page-link"
-                        href="<?php if($page < 1){ echo '#'; } else { echo "user_profile.php?page=$prev&userid=$userid "; } ?>">Previous</a>
-                </li>
+ 	     ?>
+        <nav class="mt-5">
+         <ul class="pagination justify-content-center mt-4">
+        <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
+        <a class="page-link" href="<?php if($page < 1){ echo '#'; } else { echo "user_profile.php?page=$prev&userid=$userid "; } ?>">Previous</a>
+        </li>
 
-                <?php for($i = 1; $i <= $total_pages; $i++ ): ?>
-                <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
-                    <a class="page-link" href="user_profile.php?userid=<?php echo $userid?>&page=<?= $i; ?>"> <?= $i; ?> </a>
-                </li>
-                <?php endfor; ?>
-
-                <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
-                    <a class="page-link"
-                        href="<?php if($page >= $total_pages){ echo '#'; } else {echo "user_profile.php?page=$next&userid=$userid "; } ?>">Next</a>
-                </li>
-            </ul>
+        <?php for($i = 1; $i <= $total_pages; $i++ ): ?>
+        <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
+        <a class="page-link" href="user_profile.php?userid=<?php echo $userid?>&page=<?= $i; ?>"> <?= $i; ?> </a>
+        </li>
+         <?php endfor; ?>
+        <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
+        <a class="page-link" href="<?php if($page >= $total_pages){ echo '#'; } else {echo "user_profile.php?page=$next&userid=$userid "; } ?>">Next</a>
+        </li>
+        </ul>
         </nav>
-         <?php }?>
+        <?php }?>
    
-</body>
+        </body>
 
 <style>
     body {
