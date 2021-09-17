@@ -1,10 +1,9 @@
-	<?php  include('../config.php'); ?>
-	<?php  include(ROOT_PATH . '/admin/includes/admin_functions.php'); ?>
-	<?php  include(ROOT_PATH . '/admin/includes/post_functions.php'); ?>
+	<?php include('../config.php'); ?>
 	<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
+	<?php include(ROOT_PATH . '/admin/class/AdminPosts.php'); ?>
 
 	<!-- Get all admin posts from DB -->
-	<?php $posts = getAllPosts(); ?>
+	<?php $posts=$adminPosts -> getAllPosts(); ?>
 	<title>Manage Posts</title>
 	</head>
 	<body>

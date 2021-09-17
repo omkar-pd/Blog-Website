@@ -1,6 +1,6 @@
 		<?php  include('config.php'); ?>
-		<?php  include('includes/registration_login.php'); ?>
 		<?php  include('includes/head_section.php'); ?>
+		<?php require_once('class/Users.php'); ?>
 		<title>BlogSpot | Sign in </title>
 		</head>
 		<body>

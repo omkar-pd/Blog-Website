@@ -1,8 +1,7 @@
       <?php  include('config.php'); ?>
-      <?php  require_once('includes/registration_login.php'); ?>
-      <?php require_once( ROOT_PATH . '/includes/pub_functions.php') ?>
+      <?php require_once('class/Password.php'); ?>
       <?php  include('includes/head_section.php'); ?>
-      <title>BlogSpot | Forgot Password </title>
+            <title>BlogSpot | Forgot Password </title>
       </head>
       <body>	<!-- navbar -->
 
@@ -30,11 +29,9 @@
       <form action="forgot_password.php" method="POST" >
       <div class="input-group">
       <input  class="pass_field w-50" name="new_pass" type="password" placeholder="Enter New Password" required>
-      <img class="show_pass" src="./static/images/eye-fill.svg" alt="eye" style="position: absolute;right: 292px;top: 21px;">
       </div>
       <div class="input-group">
       <input  class="pass_field w-50" name="confirm_pass" type="password" placeholder="Confirm New Password" required>
-      <img class="show_pass" src="./static/images/eye-fill.svg" alt="eye" style="position: absolute;right: 292px;top: 21px;">
       </div>
       <button name="change_pass" class="btn btn-info" style="min-width: 200px; width: fit-content;">Submit</button>
       </form>

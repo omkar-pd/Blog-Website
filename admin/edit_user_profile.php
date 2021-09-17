@@ -1,9 +1,9 @@
     <?php  include('../config.php'); ?>
-    <?php include(ROOT_PATH . '/admin/includes/admin_functions.php'); ?>
     <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
+    <?php include('./class/Profile.php') ?>
     <?php 
     $userid=$_GET['userid'];
-    $userinfo=getUserInfo($userid);
+    $userinfo=$profile->getUserInfo($userid);
      ?>
     <title>BlogSpot | Edit-User-Profile</title>
     </head>

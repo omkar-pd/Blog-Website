@@ -1,9 +1,7 @@
-	<?php require_once('config.php') ?>
-		<?php require_once( ROOT_PATH . '/includes/registration_login.php') ?>
-		<?php require_once(ROOT_PATH . '/includes/pub_functions.php') ?>
 		<?php require_once('includes/head_section.php') ?>
+		<?php require_once('class/Posts.php'); ?>
 
-		<?php $posts = getRecentPosts(); ?>
+		<?php $posts = $posts->getRecentPosts(); ?>
 
 		<title>BlogSpot | Recent Articles </title>
 		</head>
@@ -20,7 +18,7 @@
 
 		<?php foreach ($posts as $post): ?>
 		<?php $u_id=$post['user_id'];
-		$name=getName($u_id); ?>
+		$name=$classPosts->getName($u_id); ?>
 
 		<div class=" post p-3 pt-2">
 		<a href="show_post.php?id=<?php echo $post['id']; ?>">  <h3> <?php echo $post['title']; ?></h3></a>
@@ -38,6 +36,7 @@
 		<?php endforeach ?>
 		</div>
 		 
+		<!-- Pagination -->
 		 <?php 
 		 $prev = $page - 1;
   		 $next = $page + 1; 

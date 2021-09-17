@@ -1,8 +1,8 @@
 		<?php  include('../config.php'); ?>
-		<?php  include(ROOT_PATH . '/admin/includes/admin_functions.php'); ?>
+		<?php  include('./class/Admin.php'); ?>
 		<?php 
 		// Get all admin users from DB
-		$admins = getAdminUsers();
+		$admins = $admin->getAdminUsers();
 		$roles = ['Admin', 'Author','NULL'];				
 		?>
 		<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>

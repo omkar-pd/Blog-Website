@@ -1,11 +1,11 @@
     <?php  include('../config.php'); ?>
-	<?php include(ROOT_PATH . '/admin/includes/admin_functions.php'); ?>
 	<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
+    <?php include('./class/Profile.php') ?>
     <title>BlogSpot | User-Profile</title>
     <?php 
     $userid=$_GET['userid'];
-    $userinfo=getUserInfo($userid);
-    $userposts=getUserPosts($userid);
+    $userinfo=$profile->getUserInfo($userid);
+    $userposts=$profile->getUserPosts($userid);
     ?>
 </head>
 <body>

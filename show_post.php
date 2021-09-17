@@ -1,13 +1,13 @@
-<?php require_once('config.php') ?>
-<?php  include('includes/pub_functions.php'); ?>
 <?php require_once('includes/head_section.php') ?>
+<?php require_once('class/Posts.php'); ?>
+<?php require_once('class/Comments.php'); ?>
  <?php 
  global $id;
  $id=$_GET['id'];
 	if (isset($_GET['id'])) {
-		$post = getPost($_GET['id']);
+		$post = $comments->getPost($_GET['id']);
 	} 
-	$commentinfo=getComments($_GET['id']);
+	$commentinfo=$comments->getComments($_GET['id']);
 ?> 
 </head>
 <body >
@@ -24,7 +24,7 @@
 
 	<div class="show-post container-fluid w-50 ml-auto mr-auto mt-5 bg-light " >
 			<?php $u_id=$post['user_id'];
-			$name=getName($u_id); ?>
+			$name=$posts->getName($u_id); ?>
 
 	<?php while ($row = $name->fetch_assoc()) { ?>
 
