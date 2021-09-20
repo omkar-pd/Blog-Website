@@ -3,6 +3,14 @@
 	<?php require_once('class/Users.php'); ?>
 	<title>BlogSpot | Sign up </title>
 	</head>
+
+	<?php 
+	$users = new Users();
+
+	if (isset($_POST['reg_user'])) { 
+	$users->register();
+	}
+		?>
 	<body>
 		<!-- Navbar -->
 		<?php include( ROOT_PATH . '/includes/navbar.php'); ?>

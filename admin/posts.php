@@ -1,21 +1,19 @@
 	<?php include('../config.php'); ?>
 	<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
 	<?php include(ROOT_PATH . '/admin/class/AdminPosts.php'); ?>
-
-	<!-- Get all admin posts from DB -->
-	<?php $posts=$adminPosts -> getAllPosts(); ?>
 	<title>Manage Posts</title>
 	</head>
+	<?php 
+	$adminPosts = new AdminPosts();
+	$posts=$adminPosts -> getAllPosts(); 
+	?>
 	<body>
 	<!-- admin navbar -->
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
 	<?php include(ROOT_PATH . '/includes/banner.php') ?>
 	<div class="container content row ml-auto mr-auto">
-	<!-- Left side menu -->
 	<?php include(ROOT_PATH . '/admin/includes/menu.php') ?>
-	<!-- Display records from DB-->
 	<div class="table-div col-lg-10 col-md-12" >
-	<!-- Display notification message -->
 	<?php include(ROOT_PATH . '/admin/includes/messages.php') ?>
 	<?php if (empty($posts)): ?>
 	<h1 style="text-align: center; margin-top: 20px;">No posts in the database.</h1>
@@ -50,9 +48,9 @@
 			<?php endif ?>
 	<?php 
 	$prev = $page - 1;
-  	$next = $page + 1; 
- 	?>
-  	<nav class="mt-5">
+	$next = $page + 1; 
+	?>
+	<nav class="mt-5">
         <ul class="pagination justify-content-center mt-4">
         <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
         <a class="page-link" href="<?php if($page < 1){ echo '#'; } else { echo "posts.php?page=".$prev; } ?>">Previous</a>

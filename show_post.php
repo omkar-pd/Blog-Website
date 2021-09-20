@@ -1,14 +1,22 @@
 <?php require_once('includes/head_section.php') ?>
 <?php require_once('class/Posts.php'); ?>
 <?php require_once('class/Comments.php'); ?>
- <?php 
- global $id;
- $id=$_GET['id'];
+	<?php 
+	global $id;
+	$posts = new Posts();
+	$comments=new Comments();
+	$id=$_GET['id'];
 	if (isset($_GET['id'])) {
 		$post = $comments->getPost($_GET['id']);
+	}
+	if (isset($_POST['add_comment'])) { 
+	$comments->addComment();
+	}
+	if (isset($_POST['remove_comment'])) { 
+	$comments->removeComment();
 	} 
 	$commentinfo=$comments->getComments($_GET['id']);
-?> 
+	?> 
 </head>
 <body >
 
@@ -41,7 +49,7 @@
 	</div>
 	<?php endforeach ?>
 		<div class="container mt-5" id="comments">
-   		<div class="row d-flex justify-content-center">
+		<div class="row d-flex justify-content-center">
 		<div class="col-md-8">
         <div class="headings d-flex justify-content-between align-items-center mb-3">
                 <h5>Comments</h5>
@@ -51,7 +59,7 @@
 		</div>
 	<?php foreach($commentinfo as $info) { ?>
 		<div class="container mt-2">
-   		 	<div class="row d-flex justify-content-center">
+			<div class="row d-flex justify-content-center">
 			<div class="col-md-8">
             <div class="card p-3">
             <div class="d-flex justify-content-between align-items-center">
@@ -70,7 +78,7 @@
 		</div>
 <?php }?>
 		<div class="container mt-5">
-   		<div class="row d-flex justify-content-center">
+		<div class="row d-flex justify-content-center">
         <div class="col-md-8">
         <div class="headings d-flex justify-content-between align-items-center mb-3">
                 <h5>Add Comment</h5>
@@ -83,7 +91,7 @@
 					<input type="text" class="form-control mr-3" name="comment" placeholder="Add comment" required>
 					<button class="btn btn-primary" name="add_comment" style="width: 150px;">Comment</button>
 			</div>
-			 </form>
+			</form>
         </div>
 		</div>
 		</div>

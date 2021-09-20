@@ -3,8 +3,24 @@
       <?php  include('includes/head_section.php'); ?>
             <title>BlogSpot | Forgot Password </title>
       </head>
-      <body>	<!-- navbar -->
+      <?php 
+      $password= new Password();
 
+      if (isset($_POST['forgot_pass'])) {
+      global $s;
+      $s=$password->forgotPassword();
+      }
+
+      if(isset($_POST['verify'])) { 
+      global $v;
+      $v= $password->verifyCode();
+      }
+
+      if(isset($_POST['change_pass'])) {
+      $password->changePassword();
+      }
+      ?>
+      <body>
       <?php include('includes/navbar.php') ?>
       <?php include('includes/banner.php') ?>
 
@@ -42,4 +58,4 @@
       <button class="btn btn-primary" name="verify">Verify</button>
       <?php   }}?>
       </div>
-	   <?php include( ROOT_PATH . '/includes/footer.php'); ?>
+      <?php include( ROOT_PATH . '/includes/footer.php'); ?>

@@ -1,13 +1,29 @@
 		<?php  include('../config.php'); ?>
 		<?php  include('./class/Admin.php'); ?>
+		<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
+		<title>Admin | Manage users</title>
+		</head>
 		<?php 
+		$admin= new Admin();
+        if (isset($_POST['create_admin'])) {
+		$admin->createAdmin();
+		}
+        if (isset($_GET['edit-admin'])) {
+		$isEditingUser = true;
+		$admin_id = $_GET['edit-admin'];
+		$admin->editAdmin($admin_id);
+		}
+        if (isset($_POST['update_admin'])) {
+		$admin->updateAdmin($_POST);
+        }
+        if (isset($_GET['delete-admin'])) {
+		$admin_id = $_GET['delete-admin'];
+		$admin->deleteAdmin($admin_id);
+		}
 		// Get all admin users from DB
 		$admins = $admin->getAdminUsers();
 		$roles = ['Admin', 'Author','NULL'];				
 		?>
-		<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
-		<title>Admin | Manage users</title>
-		</head>
 		<body>
 		<!-- admin navbar -->
 		<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
@@ -86,10 +102,10 @@
 			<?php endif ?>
 
 		<?php 
-	 	$prev = $page - 1;
-  		$next = $page + 1; 
- 	 	?>
- 		<nav class="mt-5">
+		$prev = $page - 1;
+		$next = $page + 1; 
+		?>
+		<nav class="mt-5">
         <ul class="pagination justify-content-center mt-4">
         <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
         <a class="page-link" href="<?php if($page < 1){ echo '#'; } else { echo "users.php?page=".$prev; } ?>">Previous</a>

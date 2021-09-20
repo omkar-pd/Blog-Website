@@ -3,6 +3,14 @@
 		<?php require_once('class/Users.php'); ?>
 		<title>BlogSpot | Sign in </title>
 		</head>
+		<?php 
+		$users = new Users();
+
+		if (isset($_POST['login_btn'])) {
+		$users->login();
+		}
+		
+		?>
 		<body>
 	
 	<div class="container col-12">

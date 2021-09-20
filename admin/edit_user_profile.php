@@ -1,12 +1,18 @@
     <?php  include('../config.php'); ?>
     <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
     <?php include('./class/Profile.php') ?>
-    <?php 
-    $userid=$_GET['userid'];
-    $userinfo=$profile->getUserInfo($userid);
-     ?>
     <title>BlogSpot | Edit-User-Profile</title>
     </head>
+    <?php
+    $profile = new Profile(); 
+    if(isset($_GET['userid'])) {
+    $userid=$_GET['userid'];
+    $userinfo=$profile->getUserInfo($userid);
+    }
+    if(isset($_POST['update_user_profile'])) { 
+    $profile->updateUserProfile();
+    }
+    ?>
     <body>
     <?php include(ROOT_PATH . '/admin/includes/navbar.php')   ?>
     <?php foreach($userinfo as $user) ?>

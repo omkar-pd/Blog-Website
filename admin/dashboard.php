@@ -5,7 +5,6 @@
 	<body>
 	<?php include(ROOT_PATH . '/admin/includes/navbar.php') ?>
 	
-	<!-- if user is Admin -->
 	<?php include(ROOT_PATH . '/includes/banner.php') ?>
 	<?php	if ( in_array($_SESSION['user']['role'], ["Admin"])) { 
 	$_SESSION['message'] = "You are now logged in";

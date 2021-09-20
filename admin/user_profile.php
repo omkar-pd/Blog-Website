@@ -2,12 +2,13 @@
 	<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
     <?php include('./class/Profile.php') ?>
     <title>BlogSpot | User-Profile</title>
+</head>
     <?php 
+    $profile = new Profile();
     $userid=$_GET['userid'];
     $userinfo=$profile->getUserInfo($userid);
     $userposts=$profile->getUserPosts($userid);
     ?>
-</head>
 <body>
     <?php include(ROOT_PATH . '/admin/includes/navbar.php')   ?>
        <?php foreach($userinfo as $user){ ?>
@@ -74,10 +75,10 @@
         </div>
         <?php  
         $prev = $page - 1;
-  		$next = $page + 1; 
- 	     ?>
+        $next = $page + 1; 
+        ?>
         <nav class="mt-5">
-         <ul class="pagination justify-content-center mt-4">
+        <ul class="pagination justify-content-center mt-4">
         <li class="page-item <?php if($page <=1){ echo 'disabled'; } ?>">
         <a class="page-link" href="<?php if($page < 1){ echo '#'; } else { echo "user_profile.php?page=$prev&userid=$userid "; } ?>">Previous</a>
         </li>
@@ -86,14 +87,13 @@
         <li class="page-item <?php if($page == $i) {echo 'active'; } ?>">
         <a class="page-link" href="user_profile.php?userid=<?php echo $userid?>&page=<?= $i; ?>"> <?= $i; ?> </a>
         </li>
-         <?php endfor; ?>
+        <?php endfor; ?>
         <li class="page-item <?php if($page >= $total_pages) { echo 'disabled'; } ?>">
         <a class="page-link" href="<?php if($page >= $total_pages){ echo '#'; } else {echo "user_profile.php?page=$next&userid=$userid "; } ?>">Next</a>
         </li>
         </ul>
         </nav>
         <?php }?>
-   
         </body>
 
 <style>
