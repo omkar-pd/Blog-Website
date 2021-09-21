@@ -1,15 +1,13 @@
 		<?php  include('config.php'); ?>
 		<?php  include('includes/head_section.php'); ?>
-		<?php require_once('class/Users.php'); ?>
+		<?php  include('includes/autoloader.php'); ?>
 		<title>BlogSpot | Sign in </title>
 		</head>
 		<?php 
 		$users = new Users();
-
 		if (isset($_POST['login_btn'])) {
 		$users->login();
 		}
-		
 		?>
 		<body>
 	

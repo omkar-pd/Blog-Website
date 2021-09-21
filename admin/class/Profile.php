@@ -1,6 +1,5 @@
 <?php
-$total_pages = "";
-$page = "";
+include('includes/globals.php');
 class Profile {
     function getUserInfo($userid) {
         global $conn;

@@ -1,8 +1,5 @@
 <?php
-// Post variables
-$total_pages = "";
-$page = "";
-$sql = "";
+include('includes/globals.php');
 class AdminPosts {
     function getAllPosts() {
         global $conn, $total_pages, $page, $sql;

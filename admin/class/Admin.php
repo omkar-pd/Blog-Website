@@ -1,13 +1,5 @@
 <?php
-$admin_id = 0;
-$isEditingUser = false;
-$username = "";
-$role = "";
-$email = "";
-// general variables
-$errors = [];
-$total_pages = "";
-$page = "";
+include('includes/globals.php');
 class Admin {
     function getAdminUsers() {
         global $conn, $roles, $total_pages, $page;

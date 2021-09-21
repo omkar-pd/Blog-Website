@@ -1,6 +1,6 @@
       <?php  include('config.php'); ?>
-      <?php require_once('class/Password.php'); ?>
-      <?php  include('includes/head_section.php'); ?>
+      <?php  include('includes/head_section.php'); ?>     
+      <?php require_once('includes/autoloader.php'); ?> 
             <title>BlogSpot | Forgot Password </title>
       </head>
       <?php 

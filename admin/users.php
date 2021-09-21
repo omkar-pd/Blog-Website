@@ -1,5 +1,5 @@
 		<?php  include('../config.php'); ?>
-		<?php  include('./class/Admin.php'); ?>
+		<?php require_once('../includes/autoloader.php'); ?> 
 		<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
 		<title>Admin | Manage users</title>
 		</head>

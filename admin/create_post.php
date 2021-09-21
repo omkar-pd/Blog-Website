@@ -1,6 +1,6 @@
 	<?php  include('../config.php'); ?>
-	<?php require_once(ROOT_PATH . '/admin/class/PostActions.php'); ?>
 	<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
+	<?php require_once('../includes/autoloader.php'); ?> 
 	<title>Admin | Create Post</title>
 	</head>
 	<?php 

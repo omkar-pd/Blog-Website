@@ -1,8 +1,5 @@
 <?php
-require_once ('config.php');
-$total_pages = "";
-$page = "";
-$id = "";
+require_once('includes/globals.php');
 class Posts {
     function getPublishedPosts() {
         global $conn, $total_pages, $page;

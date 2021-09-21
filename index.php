@@ -1,7 +1,7 @@
+	<?php require_once ('config.php'); ?>
 	<?php require_once('includes/head_section.php') ?>
-	<?php require_once('class/Posts.php'); ?>
+	<?php require_once('includes/autoloader.php'); ?>
 
-	<!-- Retrieve all posts from database  -->
 	<?php 
 	$classPosts= new Posts();
 	$posts = $classPosts->getPublishedPosts(); ?>

@@ -1,5 +1,4 @@
 <?php
-require_once ('config.php');
 class Comments {
     function getPost($id) {
         global $conn;

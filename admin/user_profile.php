@@ -1,6 +1,6 @@
     <?php  include('../config.php'); ?>
 	<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
-    <?php include('./class/Profile.php') ?>
+    <?php require_once('../includes/autoloader.php'); ?> 
     <title>BlogSpot | User-Profile</title>
 </head>
     <?php 

@@ -1,9 +1,7 @@
 <?php
-require_once ('config.php');
-$username = "";
-$email = "";
-$errors = array();
+require_once('includes/globals.php');
 class Users {
+    
     function register() {
         global $conn, $errors;
         $username = $this->esc($_POST['username']);

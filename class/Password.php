@@ -1,11 +1,8 @@
 <?php
+require_once('includes/globals.php');
 require ("./PHPMailer-master/src/PHPMailer.php");
 require ("./PHPMailer-master/src/SMTP.php");
-$errors = array();
-$username_new;
-$email;
-$s;
-$v;
+
 class Password {
     function forgotPassword() {
         global $conn, $newCode, $username_new, $email;

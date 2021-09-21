@@ -1,6 +1,6 @@
+<?php require_once ('config.php'); ?>
 <?php require_once('includes/head_section.php') ?>
-<?php require_once('class/Posts.php'); ?>
-<?php require_once('class/Comments.php'); ?>
+<?php require_once('includes/autoloader.php'); ?>
 	<?php 
 	global $id;
 	$posts = new Posts();

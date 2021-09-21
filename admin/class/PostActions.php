@@ -1,16 +1,5 @@
 <?php
-// Post variables
-$post_id = 0;
-$isEditingPost = false;
-$img;
-$published = 0;
-$title = "";
-$body = "";
-$featured_image = "";
-$total_pages = "";
-$page = "";
-$sql = "";
-$errors = array();
+include('includes/globals.php');
 class PostActions {
     function createPost() {
         global $conn, $errors, $title, $featured_image, $topic_id, $body, $published;
