@@ -11,18 +11,20 @@
 	?>
 	<div class="container dashboard">
 		<h1>Welcome</h1>
-	<div class="stats d-flex flex-row justify-content-center">
+	<div class="stats d-flex flex-md-row flex-column align-items-center justify-content-center mt-2">
 		<a href="users.php" class="first ">
+		<i class="bi bi-people"></i>
 		<span>Users</span>
 		</a>
 		<a href="posts.php">
+		<i class="bi bi-file-earmark-richtext-fill"></i>
 		<span>Posts</span>
 		</a>
 		</div>
 		<br><br><br>
-	<div class="buttons d-flex flex-row justify-content-center">
-		<a href="users.php">Add Users</a>
-		<a href="posts.php">Add Posts</a>
+	<div class="buttons d-flex flex-md-row flex-column align-items-center justify-content-center">
+		<a href="users.php"><i class="bi bi-people"></i> Add Users</a>
+		<a href="posts.php"><i class="bi bi-file-earmark-richtext-fill"></i> Add Posts</a>
 	</div>
 	</div>
 	<?php	} ?>
