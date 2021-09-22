@@ -1,4 +1,4 @@
-<div class="menu col-lg-2 col-md-4 col-12">
+<div class="menu col-lg-2 col-12 text-center">
 	<div class="card">
 		<div class="card-header">
 			<h2>Actions</h2>

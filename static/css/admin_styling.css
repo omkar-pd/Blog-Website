@@ -152,7 +152,6 @@ th {
 /* * PAGE CONTENT */
 
 .container.content .menu {
-  width: 16%;
   float: left;
   padding: 40px 10px;
 }
@@ -290,7 +289,6 @@ th {
   margin: 5px;
   border: none;
   border-radius: 5px;
-  /* color: rgb(24, 48, 89); */
   color: white;
   background: #276fbf;
 }
@@ -298,6 +296,9 @@ th {
 @media only screen and (max-width: 850px) {
   .user-content {
     grid-template-columns: repeat(2, 50%);
+  }
+  .create-post-div {
+    width: 100% !important;
   }
 }
 @media only screen and (max-width: 700px) {
