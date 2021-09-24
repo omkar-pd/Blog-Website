@@ -38,7 +38,6 @@
 		</div>
 		<?php endforeach ?>
 		</div>
-		 
 		<!-- Pagination -->
 		<?php 
 		$prev = $page - 1;
