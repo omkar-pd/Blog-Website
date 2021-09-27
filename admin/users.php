@@ -1,4 +1,5 @@
 		<?php  include('../config.php'); ?>
+    <?php include('./includes/validate.php') ?>
 		<?php require_once('../includes/autoloader.php'); ?> 
 		<?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
 		<title>Admin | Manage users</title>
