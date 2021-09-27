@@ -32,7 +32,7 @@
 
       <div class="logged_in_info">
 		  <li class="nav-item active">
-      <a class="nav-link text-white"  href="logout.php">Logout <span class="sr-only">(current)</span></a>
+      <a class="nav-link text-white text-left"  href="logout.php">Logout <span class="sr-only">(current)</span></a>
       </li>
       
     	</div>
