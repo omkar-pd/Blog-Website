@@ -1,0 +1,237 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  background: white;
+}
+
+.container {
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0074d9;
+  font-family: "Averia Serif Libre", cursive;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul,
+ol {
+  margin-left: 40px;
+}
+
+hr {
+  margin: 10px 0px;
+  opacity: 0.25;
+}
+
+.navbar {
+  height: auto !important;
+  background-color: #292929 !important;
+}
+
+.btn {
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  width: 50%;
+  letter-spacing: 0.1em;
+  margin: 10px 0px;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* NOTIFICATION MESSAGES */
+.message {
+  min-width: 300px;
+  width: auto;
+  margin: 0px auto;
+  padding: 10px 0px;
+  color: #3c763d;
+  background: #dff0d8;
+  border: 1px solid #3c763d;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error {
+  color: #a94442;
+  background: #f2dede;
+  border: 1px solid #a94442;
+  margin-bottom: 20px;
+}
+
+.validation_errors p {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.logged_in_info {
+  text-align: center;
+}
+
+/* FORM DEFAULTS */
+form h2 {
+  margin: 25px auto;
+  text-align: center;
+  font-family: "Averia Serif Libre", cursive;
+}
+
+form input {
+  width: 100%;
+  display: block;
+  padding: 13px 13px;
+  font-size: 1em;
+  margin: 5px auto 10px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+form input:focus {
+  outline: none;
+}
+
+.register_div {
+  width: 40%;
+  margin: 20px auto;
+}
+
+.login_div {
+  width: 47%;
+  margin: 20px auto;
+}
+
+/* Show password */
+.pass_field_div {
+  position: relative;
+}
+
+.show_pass {
+  position: absolute;
+  top: 30%;
+  right: 11%;
+}
+
+@media only screen and (max-width: 752px) {
+  .register_div {
+    width: 100%;
+  }
+
+  .login_div {
+    width: 100%;
+  }
+
+  .forgot_pass form input {
+    width: 100% !important;
+    margin-top: 25px;
+  }
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  right: 0;
+  bottom: 7px;
+  left: 0;
+  color: white;
+  width: 95%;
+  background-color: #292929;
+  margin: 20px auto 0px;
+  padding: 20px 0px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.content .post {
+  position: relative;
+  max-width: 450px;
+  border: 1px solid black;
+  margin: 25px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+}
+.content .post h3 {
+  min-height: 50px;
+}
+.content .post .post_image {
+  width: 100%;
+  height: 300px;
+  margin: auto;
+}
+.content .post .continue-reading {
+  width: 150px;
+  padding: 5px;
+  margin: 5px auto;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #276fbf;
+}
+
+.post:hover {
+  transform: scale(1.05);
+  transition: linear;
+}
+
+@media only screen and (max-width: 975px) {
+  .content .post {
+    max-width: 100%;
+  }
+  .content .post .post_image {
+    height: auto;
+  }
+}
+/* SHOW POST */
+.show-post {
+  width: 80% !important;
+  padding: 10px;
+  min-height: 100vh;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.show-post img {
+  width: 75vw;
+}
+@media only screen and (max-width: 675px) {
+  .show-post {
+    width: 100% !important;
+  }
+}
+
+.container .post a {
+  text-decoration: none;
+}
+
+.remove_comment {
+  border: none;
+  background-color: transparent;
+  color: blue;
+}

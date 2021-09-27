@@ -1,0 +1,36 @@
+/* tables */
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 20px auto;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  & a {
+    text-decoration: none !important;
+  }
+}
+th {
+  text-align: center;
+}
+
+/* Table div (Displaying records from DB) */
+
+.table-div .message {
+  width: 90%;
+  margin-top: 20px;
+}
+
+.table-div a.fa {
+  color: white;
+  padding: 3px;
+}
+.table-div .edit {
+  background: $table-edit-background;
+}
+.table-div .delete {
+  background: $table-delete-background;
+}

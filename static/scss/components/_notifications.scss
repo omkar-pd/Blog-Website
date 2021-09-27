@@ -1,0 +1,25 @@
+/* NOTIFICATION MESSAGES */
+.message {
+  min-width: 300px;
+  width: auto;
+  margin: 0px auto;
+  padding: 10px 0px;
+  color: $notification-message;
+  background: #dff0d8;
+  border: 1px solid $notification-message;
+  border-radius: 5px;
+  text-align: center;
+}
+.error {
+  color: $error-color;
+  background: $error-background;
+  border: 1px solid $error-color;
+  margin-bottom: 20px;
+}
+.validation_errors p {
+  text-align: center;
+  margin-left: 10px;
+}
+.logged_in_info {
+  text-align: center;
+}

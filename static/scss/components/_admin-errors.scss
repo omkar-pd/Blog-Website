@@ -1,0 +1,20 @@
+.message {
+  width: 100%;
+  margin: 0px auto;
+  padding: 10px 0px;
+  color: $notification-message;
+  background: #dff0d8;
+  border: 1px solid #3c763d;
+  border-radius: 5px;
+  text-align: center;
+}
+.error {
+  color: $error-color;
+  background: $error-background;
+  border: 1px solid $error-color;
+  margin-bottom: 20px;
+}
+.validation_errors p {
+  text-align: left;
+  margin-left: 10px;
+}

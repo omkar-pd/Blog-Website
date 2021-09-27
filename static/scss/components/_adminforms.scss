@@ -1,0 +1,36 @@
+/* forms */
+form {
+  width: 60%;
+  margin: 5px auto;
+  padding-bottom: 50px;
+}
+form input[type="file"],
+input[type="email"],
+input[type="password"],
+input[type="text"],
+form select,
+form textarea {
+  width: 100%;
+  display: block;
+  padding: 13px 13px;
+  font-size: 1em;
+  margin: 5px auto 10px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+input[type="checkbox"] {
+  height: 20px;
+  float: left;
+}
+form button {
+  float: right;
+  margin-left: 24%;
+}
+form input:focus {
+  outline: none;
+}
+label {
+  margin-top: 20px;
+  float: left;
+}

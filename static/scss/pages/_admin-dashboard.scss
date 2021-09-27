@@ -1,0 +1,44 @@
+/* * DASHBOARD */
+
+.container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container.dashboard h1 {
+  text-align: center;
+  margin: 25px;
+}
+.container.dashboard .stats a {
+  display: inline-block;
+  padding: 30px;
+  margin: 10px;
+  width: 215px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #bfbcb3;
+}
+
+.container.dashboard .stats a:hover {
+  cursor: pointer;
+  background-color: #e1e1e1;
+}
+.container.dashboard .buttons a {
+  display: inline-block;
+  width: 215px;
+  margin: 10px;
+  text-decoration: none;
+  color: #444;
+  padding: 10px 25px;
+  border: none;
+  background-color: #0e7d92;
+  color: white;
+  text-align: center;
+}
+
+/* * PAGE CONTENT */
+
+.container.content .menu {
+  float: left;
+  padding: 40px 10px;
+}

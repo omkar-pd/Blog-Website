@@ -1,0 +1,20 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-tag-color;
+  font-family: "Averia Serif Libre", cursive;
+}
+a {
+  text-decoration: none !important;
+}
+ul,
+ol {
+  margin-left: 40px;
+}
+hr {
+  margin: 10px 0px;
+  opacity: 0.25;
+}
