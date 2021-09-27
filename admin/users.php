@@ -6,18 +6,18 @@
 		</head>
 		<?php 
 		$admin= new Admin();
-        if (isset($_POST['create_admin'])) {
+    if (isset($_POST['create_admin'])) {
 		$admin->createAdmin();
 		}
-        if (isset($_GET['edit-admin'])) {
+    if (isset($_GET['edit-admin'])) {
 		$isEditingUser = true;
 		$admin_id = $_GET['edit-admin'];
 		$admin->editAdmin($admin_id);
 		}
-        if (isset($_POST['update_admin'])) {
+    if (isset($_POST['update_admin'])) {
 		$admin->updateAdmin($_POST);
-        }
-        if (isset($_GET['delete-admin'])) {
+    }
+    if (isset($_GET['delete-admin'])) {
 		$admin_id = $_GET['delete-admin'];
 		$admin->deleteAdmin($admin_id);
 		}
