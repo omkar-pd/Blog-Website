@@ -4,13 +4,16 @@
     <title>BlogSpot | Edit-User-Profile</title>
     </head>
     <?php
+    if(!isset($_SESSION['user']) || $_SESSION['user_id'] !=$_GET['userid']) {
+      header('location:' . BASE_URL .'index.php');
+    }
     $profile = new Profile(); 
     if(isset($_GET['userid'])) {
-    $userid=$_GET['userid'];
-    $userinfo=$profile->getUserInfo($userid);
+      $userid=$_GET['userid'];
+      $userinfo=$profile->getUserInfo($userid);
     }
     if(isset($_POST['update_user_profile'])) { 
-    $profile->updateUserProfile();
+      $profile->updateUserProfile();
     }
     ?>
     <body>
