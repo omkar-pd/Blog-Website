@@ -11,6 +11,9 @@
   <li class="nav-item active">
       <a class="nav-link text-white" href="/Blog-Website/index.php">Home <span class="sr-only">(current)</span></a>
   </li>
+  <li class="nav-item active">
+    <a class="nav-link text-white" href="/Blog-Website/recent_articles.php">Recent Articles <span class="sr-only">(current)</span></a>
+  </li>
 	  <?php if (isset($_SESSION['user'])): ?>
 		
 	<li class="nav-item active">
@@ -20,9 +23,6 @@
     <a class="nav-link text-white" href="edit_user_profile.php?userid=<?php echo $_SESSION['user']['id'] ?>">Edit Profile <span class="sr-only">(current)</span></a>
     </li>
 	<?php endif ?>
-    <li class="nav-item active">
-    <a class="nav-link text-white" href="/Blog-Website/recent_articles.php">Recent Articles <span class="sr-only">(current)</span></a>
-  </li>
     <?php if (isset($_SESSION['user']['username'])) { ?>
     <?php	if ( in_array($_SESSION['user']['role'], ["Admin","Author"])) {  ?> 
     <li class="nav-item active">
