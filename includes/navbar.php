@@ -18,7 +18,9 @@
       <li class="nav-item active">
       <a class="nav-link text-white" href="./admin/user_profile.php?userid=<?php echo $_SESSION['user']['id'] ?>"><?php echo $_SESSION['user']['username'] ?> <span class="sr-only">(current)</span></a>
       </li>
-
+      <li class="nav-item active">
+      <a class="nav-link text-white" href="./admin/edit_user_profile.php?userid=<?php echo $_SESSION['user']['id'] ?>">Edit Profile <span class="sr-only">(current)</span></a>
+      </li>
       <?php	if ( in_array($_SESSION['user']['role'], ["Admin","Author"])) {  ?> 
 
       <li class="nav-item active">
