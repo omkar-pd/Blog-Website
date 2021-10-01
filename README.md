@@ -4,32 +4,20 @@ Blog Website Using PHP
 
 HOMEPAGE:
 
-![BlogSpot   Home](https://user-images.githubusercontent.com/81369580/132175538-bd13a967-f93e-45dd-a8ba-03e3a9a1799b.png)
+![homepage](https://user-images.githubusercontent.com/81369580/135572131-8d21d401-22a2-45f2-b9e1-a6e352fc17a7.png)
 
-Article:
+Admin Dashboard:
 
-![BlogSpot   Secrets to Living a Happier Life](https://user-images.githubusercontent.com/81369580/129002522-7840f352-8d55-4d2e-a71c-c0d67a9ccd1e.png)
+![admin dashboard](https://user-images.githubusercontent.com/81369580/135572503-569bd077-3fff-4e1c-aa49-e016249c3227.png)
 
-Recent Articles:
+Sign up:
 
-![BlogSpot   Recent Articles](https://user-images.githubusercontent.com/81369580/129002766-767524bb-45b2-48e7-887f-bad559dad6a3.png)
+![sign up](https://user-images.githubusercontent.com/81369580/135572532-0dec3e6a-cce0-42e9-9006-d50713546ef1.png)
 
-SIGN UP PAGE:
+Sign in:
 
-![BlogSpot   Sign up](https://user-images.githubusercontent.com/81369580/128605039-dffa9ae1-5b28-4aa1-80c2-705ce719d5c6.png)
+![login](https://user-images.githubusercontent.com/81369580/135572554-eb3d25c0-6dc9-4f97-9ec8-6656ce20dfc6.png)
 
-AUTHOR Dashboard:
+Comments:
 
-![Author  Dashboard ](https://user-images.githubusercontent.com/81369580/128605046-34ac7fcf-a4c9-41a2-8311-8d463626b149.png)
-
-AUTHOR updating Posts:
-
-![Author updating post](https://user-images.githubusercontent.com/81369580/129002452-3be59932-1637-44a1-8006-3eeaff3c39eb.png)
-
-ADMIN Dashboard:
-
-![Admin   Dashboard](https://user-images.githubusercontent.com/81369580/129002671-a4d6ee2d-a69f-4392-8960-57a8f4532b2c.png)
-
-ADMIN Manage Users:
-
-![Admin   Manage Posts](https://user-images.githubusercontent.com/81369580/129002613-9f84fc1d-4dfb-455f-8f2d-328883926ff0.png)
+![comments section](https://user-images.githubusercontent.com/81369580/135572561-b0603d89-f8cc-4ef8-a834-2261ef220f41.png)
