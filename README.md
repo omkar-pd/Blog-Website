@@ -2,8 +2,6 @@
 
 Blog Website Using PHP
 
-![Homepage](screenshots/homepage.png?raw=true "Homepage")
-
 HOMEPAGE:
 
 ![BlogSpot   Home](https://user-images.githubusercontent.com/81369580/132175538-bd13a967-f93e-45dd-a8ba-03e3a9a1799b.png)
