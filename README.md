@@ -2,7 +2,7 @@
 
 Blog Website Using PHP
 
-![alt](https://www.awesomescreenshot.com/image/14321916?key=50103fe41ce23816d731d6f6beab95aa)
+![Homepage](screenshots/homepage.png?raw=true "Homepage")
 
 HOMEPAGE:
 
