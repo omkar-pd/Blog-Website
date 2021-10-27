@@ -3,8 +3,10 @@ require_once('includes/globals.php');
 require("./PHPMailer-master/src/PHPMailer.php");
 require("./PHPMailer-master/src/SMTP.php");
 
-class Password {
-  function forgotPassword() {
+class Password
+{
+  function forgotPassword()
+  {
     global $conn, $newCode, $username_new, $email;
     $username_new = $this->esc($_POST['username']);
     $email = $this->esc($_POST['email']);
@@ -41,7 +43,8 @@ class Password {
       }
     }
   }
-  function verifyCode() {
+  function verifyCode()
+  {
     global $conn, $newCode, $username_new, $email;
     $username_new = $this->esc($_POST['username']);
     $email = $this->esc($_POST['email']);
@@ -53,7 +56,8 @@ class Password {
       return $v = "false";
     }
   }
-  function changePassword() {
+  function changePassword()
+  {
     global $conn, $username_new, $email;
     $username_new = $this->esc($_POST['username']);
     $email = $this->esc($_POST['email']);
@@ -70,7 +74,8 @@ class Password {
       array_push($errors, "Passwords do not match");
     }
   }
-  function esc(String $value) {
+  function esc(String $value)
+  {
     global $conn;
     $val = trim($value);
     $val = mysqli_real_escape_string($conn, $value);
